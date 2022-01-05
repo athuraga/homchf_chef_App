@@ -697,6 +697,32 @@ class _HomeScreenState extends State<HomeScreen>
                                                     )
                                                   ],
                                                 ),
+                                                Row(
+                                                  mainAxisAlignment:
+                                                      MainAxisAlignment
+                                                          .spaceBetween,
+                                                  children: [
+                                                    Flexible(
+                                                      child: Text(
+                                                        reverseorderListPast[
+                                                                index]
+                                                            .orderSchedule!,
+                                                        maxLines: 2,
+                                                        style: TextStyle(
+                                                            color: Palette
+                                                                .loginhead,
+                                                            overflow:
+                                                                TextOverflow
+                                                                    .ellipsis,
+                                                            fontFamily:
+                                                                proxima_nova_thin,
+                                                            fontStyle: FontStyle
+                                                                .italic,
+                                                            fontSize: 12),
+                                                      ),
+                                                    ),
+                                                  ],
+                                                ),
                                               ],
                                             )),
                                         DottedLine(
@@ -1029,6 +1055,23 @@ class _HomeScreenState extends State<HomeScreen>
                                 color: Palette.loginhead,
                                 size: 35,
                               )
+                            ],
+                          ),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Flexible(
+                                child: Text(
+                                  reverseorderList[index].orderSchedule!,
+                                  maxLines: 2,
+                                  style: TextStyle(
+                                      color: Palette.loginhead,
+                                      overflow: TextOverflow.ellipsis,
+                                      fontFamily: proxima_nova_thin,
+                                      fontStyle: FontStyle.italic,
+                                      fontSize: 12),
+                                ),
+                              ),
                             ],
                           ),
                         ],

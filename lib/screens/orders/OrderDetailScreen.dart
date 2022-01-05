@@ -179,13 +179,16 @@ class _OrderDetailScreenState extends State<OrderDetailScreen> {
                                   padding: EdgeInsets.only(
                                       left: 20, right: 20, top: 10, bottom: 5),
                                   alignment: Alignment.centerLeft,
-                                  child: Text(
-                                    'Delivery Date & Food Allergies',
-                                    style: TextStyle(
-                                        color: Colors.green,
-                                        fontFamily: proxima_nova_reg,
-                                        fontSize: 12,
-                                        fontWeight: FontWeight.bold),
+                                  child: SizedBox(
+                                    width: 200,
+                                    child: Text(
+                                      'Delivery Date, Time, Pick-Up-Point & Food Allergies',
+                                      style: TextStyle(
+                                          color: Colors.green,
+                                          fontFamily: proxima_nova_reg,
+                                          fontSize: 12,
+                                          fontWeight: FontWeight.bold),
+                                    ),
                                   ),
                                 ),
                               ],
@@ -201,14 +204,14 @@ class _OrderDetailScreenState extends State<OrderDetailScreen> {
                                     width: 200,
                                     child: Text(
                                       '${data!.orderSchedule}',
-                                      maxLines: 5,
+                                      maxLines: 8,
                                       softWrap: false,
                                       overflow: TextOverflow.ellipsis,
                                       style: TextStyle(
                                           color: Palette.loginhead,
-                                          fontFamily: proxima_nova_reg,
-                                          fontSize: 12,
-                                          fontWeight: FontWeight.bold),
+                                          fontFamily: proxima_nova_thin,
+                                          fontStyle: FontStyle.italic,
+                                          fontSize: 15),
                                     ),
                                   ),
                                 ),
@@ -231,6 +234,7 @@ class _OrderDetailScreenState extends State<OrderDetailScreen> {
                                       style: TextStyle(
                                         color: Palette.loginhead,
                                         fontFamily: proxima_nova_reg,
+                                        overflow: TextOverflow.ellipsis,
                                         fontSize: 11,
                                       ),
                                     ),
@@ -282,19 +286,34 @@ class _OrderDetailScreenState extends State<OrderDetailScreen> {
                                     children: [
                                       Row(
                                         children: [
-                                          Text(
-                                            data!.orderItems![index1].itemName!,
-                                            style: TextStyle(
-                                                color: Palette.loginhead,
-                                                fontFamily: "ProximaNova",
-                                                fontSize: 14),
+                                          SizedBox(
+                                            width: 141,
+                                            child: Text(
+                                              data!.orderItems![index1]
+                                                  .itemName!,
+                                              textAlign: TextAlign.left,
+                                              maxLines: 3,
+                                              softWrap: false,
+                                              overflow: TextOverflow.ellipsis,
+                                              style: TextStyle(
+                                                  color: Palette.loginhead,
+                                                  fontFamily: "ProximaNova",
+                                                  fontSize: 14),
+                                            ),
                                           ),
-                                          Text(
-                                            ' x ${data!.orderItems![index1].qty}',
-                                            style: TextStyle(
-                                                color: Palette.green,
-                                                fontFamily: "ProximaBold",
-                                                fontSize: 14),
+                                          SizedBox(
+                                            width: 30,
+                                            child: Text(
+                                              ' x ${data!.orderItems![index1].qty}',
+                                              textAlign: TextAlign.left,
+                                              maxLines: 3,
+                                              softWrap: false,
+                                              overflow: TextOverflow.ellipsis,
+                                              style: TextStyle(
+                                                  color: Palette.green,
+                                                  fontFamily: "ProximaBold",
+                                                  fontSize: 14),
+                                            ),
                                           ),
                                         ],
                                       ),
@@ -312,6 +331,10 @@ class _OrderDetailScreenState extends State<OrderDetailScreen> {
                                   ),
                                   Text(
                                     '$currencySymbol ${data!.orderItems![index1].price.toString()}',
+                                    textAlign: TextAlign.right,
+                                    maxLines: 3,
+                                    softWrap: false,
+                                    overflow: TextOverflow.ellipsis,
                                     style: TextStyle(
                                         color: Palette.loginhead,
                                         fontFamily: proxima_nova_reg,
