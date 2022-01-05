@@ -34,6 +34,7 @@ class _HomeScreenState extends State<HomeScreen>
   List<Data> orderList = [];
   List<Data> orderListPast = [];
   List<Data> reverseorderListPast = [];
+  List<Data> reverseorderList = [];
 
   @override
   void initState() {
@@ -108,6 +109,8 @@ class _HomeScreenState extends State<HomeScreen>
                   // if(searchController.text.isEmpty){
                   orderListPast.clear();
                   reverseorderListPast.clear();
+                  reverseorderList.clear();
+
                   //  }
                   for (int i = 0; i < snapshot.data!.data!.data!.length; i++) {
                     if (snapshot.data!.data!.data![i].orderStatus ==
@@ -120,6 +123,7 @@ class _HomeScreenState extends State<HomeScreen>
                     }
                   }
                   reverseorderListPast = orderListPast.reversed.toList();
+                  reverseorderList = orderList.reversed.toList();
 
                   // return newOrderList(context, snapshot.data.data.data);
                   return _tabBar(context);
@@ -955,13 +959,14 @@ class _HomeScreenState extends State<HomeScreen>
         padding: EdgeInsets.only(top: 10, bottom: 10),
         scrollDirection: Axis.vertical,
         itemBuilder: (context, index) {
-          String? dropdownValue = orderList[index].orderStatus;
+          String? dropdownValue = reverseorderList[index].orderStatus;
           return GestureDetector(
             onTap: () {
               Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => OrderDetailScreen(orderList[index]),
+                    builder: (context) =>
+                        OrderDetailScreen(reverseorderList[index]),
                   ));
             },
             child: Card(
@@ -987,7 +992,7 @@ class _HomeScreenState extends State<HomeScreen>
                                     fontSize: 12),
                               ),
                               Text(
-                                orderList[index].orderId!,
+                                reverseorderList[index].orderId!,
                                 style: TextStyle(
                                     color: Palette.switchs,
                                     fontFamily: proxima_nova_reg,
@@ -1001,7 +1006,7 @@ class _HomeScreenState extends State<HomeScreen>
                                     fontSize: 12),
                               ),
                               Text(
-                                '${orderList[index].date}, ${orderList[index].time}',
+                                '${reverseorderList[index].date}, ${reverseorderList[index].time}',
                                 style: TextStyle(
                                     color: Palette.switchs,
                                     fontFamily: proxima_nova_reg,
@@ -1013,7 +1018,7 @@ class _HomeScreenState extends State<HomeScreen>
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
                               Text(
-                                orderList[index].userName!,
+                                reverseorderList[index].userName!,
                                 style: TextStyle(
                                     color: Palette.loginhead,
                                     fontFamily: proxima_nova_bold,
@@ -1037,7 +1042,7 @@ class _HomeScreenState extends State<HomeScreen>
                     padding: EdgeInsets.only(
                         left: 20, right: 20, bottom: 10, top: 10),
                     child: ListView.builder(
-                      itemCount: orderList[index].orderItems!.length,
+                      itemCount: reverseorderList[index].orderItems!.length,
                       shrinkWrap: true,
                       physics: NeverScrollableScrollPhysics(),
                       scrollDirection: Axis.vertical,
@@ -1050,7 +1055,7 @@ class _HomeScreenState extends State<HomeScreen>
                               Row(
                                 children: [
                                   Text(
-                                    orderList[index]
+                                    reverseorderList[index]
                                         .orderItems![index1]
                                         .itemName!,
                                     style: TextStyle(
@@ -1059,7 +1064,7 @@ class _HomeScreenState extends State<HomeScreen>
                                         fontSize: 14),
                                   ),
                                   Text(
-                                    ' x ${orderList[index].orderItems![index1].qty}',
+                                    ' x ${reverseorderList[index].orderItems![index1].qty}',
                                     style: TextStyle(
                                         color: Palette.green,
                                         fontFamily: "ProximaBold",
@@ -1069,7 +1074,7 @@ class _HomeScreenState extends State<HomeScreen>
                               ),
                               Visibility(
                                 child: Text(
-                                  '(${orderList[index].orderItems![index1].itemName})',
+                                  '(${reverseorderList[index].orderItems![index1].itemName})',
                                   style: TextStyle(
                                       color: Palette.switchs,
                                       fontFamily: "ProximaNova",
@@ -1101,7 +1106,7 @@ class _HomeScreenState extends State<HomeScreen>
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Text(
-                                orderList[index].paymentType!,
+                                reverseorderList[index].paymentType!,
                                 style: TextStyle(
                                     color: Palette.switchs,
                                     fontFamily: proxima_nova_reg,
@@ -1111,7 +1116,7 @@ class _HomeScreenState extends State<HomeScreen>
                                 height: 10,
                               ),
                               Text(
-                                '${SharedPreferenceHelper.getString(Preferences.currency_symbol)} ${orderList[index].amount}',
+                                '${SharedPreferenceHelper.getString(Preferences.currency_symbol)} ${reverseorderList[index].amount}',
                                 style: TextStyle(
                                     color: Palette.loginhead,
                                     fontFamily: proxima_nova_bold,
@@ -1141,7 +1146,8 @@ class _HomeScreenState extends State<HomeScreen>
                                 onChanged: (dynamic newValue) async {
                                   dropdownValue = newValue;
                                   Map<String, String?> param = new HashMap();
-                                  param['id'] = orderList[index].id.toString();
+                                  param['id'] =
+                                      reverseorderList[index].id.toString();
                                   param['status'] = dropdownValue;
                                   var res = await changeOrderStatus(param);
                                   if (res.data!.success == true) {
@@ -1177,7 +1183,8 @@ class _HomeScreenState extends State<HomeScreen>
                                   // selectedItemId = snapshot.data.data.data[snapshot.data.data.data.indexOf(newValue)].id;
                                   // print('value ${newValue.name} $selectedItemId');
                                 },
-                                items: orderList[index].orderStatus == 'PENDING'
+                                items: reverseorderList[index].orderStatus ==
+                                        'PENDING'
                                     ? <String>[
                                         'APPROVE',
                                         'REJECT',
@@ -1187,13 +1194,16 @@ class _HomeScreenState extends State<HomeScreen>
                                           value: item,
                                         );
                                       }).toList()
-                                    : orderList[index].orderStatus !=
+                                    : reverseorderList[index].orderStatus !=
                                                 'CANCEL' &&
-                                            orderList[index].orderStatus !=
+                                            reverseorderList[index]
+                                                    .orderStatus !=
                                                 'REJECT' &&
-                                            orderList[index].orderStatus !=
+                                            reverseorderList[index]
+                                                    .orderStatus !=
                                                 'COMPLETE'
-                                        ? orderList[index].deliveryType ==
+                                        ? reverseorderList[index]
+                                                    .deliveryType ==
                                                 'SHOP'
                                             ? <String>[
                                                 'PREPARE_FOR_ORDER',
