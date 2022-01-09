@@ -1,7 +1,7 @@
-import 'package:mealup_restaurant_side/retrofit/api_client.dart';
-import 'package:mealup_restaurant_side/retrofit/api_header.dart';
-import 'package:mealup_restaurant_side/retrofit/base_model.dart';
-import 'package:mealup_restaurant_side/retrofit/server_error.dart';
+import 'package:homchf_chef_side/retrofit/api_client.dart';
+import 'package:homchf_chef_side/retrofit/api_header.dart';
+import 'package:homchf_chef_side/retrofit/base_model.dart';
+import 'package:homchf_chef_side/retrofit/server_error.dart';
 
 Future<BaseModel<EarningHistoryResponse>> getEarningHistory() async {
   EarningHistoryResponse response;
@@ -9,16 +9,16 @@ Future<BaseModel<EarningHistoryResponse>> getEarningHistory() async {
     response = await ApiClient(ApiHeader().dioData()).earningHistory();
   } catch (error, stacktrace) {
     print("Exception occur: $error stackTrace: $stacktrace");
-    return BaseModel()
-      ..setException(ServerError.withError(error: error));
+    return BaseModel()..setException(ServerError.withError(error: error));
   }
-  return BaseModel()
-    ..data = response;
+  return BaseModel()..data = response;
 }
+
 class EarningHistoryResponse {
   EarningHistoryResponse({
-      this.success, 
-      this.data,});
+    this.success,
+    this.data,
+  });
 
   EarningHistoryResponse.fromJson(dynamic json) {
     success = json['success'];
@@ -35,16 +35,16 @@ class EarningHistoryResponse {
     }
     return map;
   }
-
 }
 
 class Data {
   Data({
-      this.totalBalance, 
-      this.todayEarning, 
-      this.weeklyEarning, 
-      this.yearlyEarning, 
-      this.earningChart,});
+    this.totalBalance,
+    this.todayEarning,
+    this.weeklyEarning,
+    this.yearlyEarning,
+    this.earningChart,
+  });
 
   Data.fromJson(dynamic json) {
     totalBalance = json['total_balance'];
@@ -75,13 +75,13 @@ class Data {
     }
     return map;
   }
-
 }
 
 class Earning_chart {
   Earning_chart({
-      this.data, 
-      this.label,});
+    this.data,
+    this.label,
+  });
 
   Earning_chart.fromJson(dynamic json) {
     data = json['data'];
@@ -96,5 +96,4 @@ class Earning_chart {
     map['label'] = label;
     return map;
   }
-
 }

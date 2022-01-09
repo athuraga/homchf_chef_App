@@ -7,15 +7,15 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:image_picker/image_picker.dart';
-import 'package:mealup_restaurant_side/config/Palette.dart';
-import 'package:mealup_restaurant_side/constant/app_strings.dart';
-import 'package:mealup_restaurant_side/localization/localization_constant.dart';
-import 'package:mealup_restaurant_side/models/common_response.dart';
-import 'package:mealup_restaurant_side/models/vendor_detail.dart';
-import 'package:mealup_restaurant_side/screens/profile/ProfileScreen.dart';
-import 'package:mealup_restaurant_side/utilities/device_utils.dart';
-import 'package:mealup_restaurant_side/utilities/prefConstatnt.dart';
-import 'package:mealup_restaurant_side/utilities/preference.dart';
+import 'package:homchf_chef_side/config/Palette.dart';
+import 'package:homchf_chef_side/constant/app_strings.dart';
+import 'package:homchf_chef_side/localization/localization_constant.dart';
+import 'package:homchf_chef_side/models/common_response.dart';
+import 'package:homchf_chef_side/models/vendor_detail.dart';
+import 'package:homchf_chef_side/screens/profile/ProfileScreen.dart';
+import 'package:homchf_chef_side/utilities/device_utils.dart';
+import 'package:homchf_chef_side/utilities/prefConstatnt.dart';
+import 'package:homchf_chef_side/utilities/preference.dart';
 import 'package:sizer/sizer.dart';
 
 // ignore: must_be_immutable
@@ -41,7 +41,7 @@ class _ProfileEditScreenState extends State<ProfileEditScreen> {
   TextEditingController avgDeliveryTimeController = TextEditingController();
   TextEditingController costOfTwoPersonController = TextEditingController();
   TextEditingController businessLicenseNumberController =
-  TextEditingController();
+      TextEditingController();
   String? timeSlotValue = '';
   String? vendorTypeValue = '';
   String? restaurantError = '';
@@ -182,14 +182,16 @@ class _ProfileEditScreenState extends State<ProfileEditScreen> {
                               margin: EdgeInsets.only(left: 10, right: 5),
                               child: ClipRRect(
                                   borderRadius:
-                                  BorderRadius.all(Radius.circular(10)),
+                                      BorderRadius.all(Radius.circular(10)),
                                   child: foodImage != null
-                                      ? Image.file(foodImage!, fit: BoxFit.fill,)
+                                      ? Image.file(
+                                          foodImage!,
+                                          fit: BoxFit.fill,
+                                        )
                                       : Image(
-                                    image:
-                                    NetworkImage(data!.image!),
-                                    fit: BoxFit.fill,
-                                  )),
+                                          image: NetworkImage(data!.image!),
+                                          fit: BoxFit.fill,
+                                        )),
                             ),
                             Container(
                               width: 50.w,
@@ -291,7 +293,7 @@ class _ProfileEditScreenState extends State<ProfileEditScreen> {
                                     borderRadius: BorderRadius.circular(20),
                                   ),
                                   height:
-                                  MediaQuery.of(context).size.height * 0.07,
+                                      MediaQuery.of(context).size.height * 0.07,
                                   width: MediaQuery.of(context).size.width,
                                   child: Container(
                                     child: Padding(
@@ -322,7 +324,7 @@ class _ProfileEditScreenState extends State<ProfileEditScreen> {
                                 ),
                                 Visibility(
                                   visible:
-                                  restaurantError!.isEmpty ? false : true,
+                                      restaurantError!.isEmpty ? false : true,
                                   child: Container(
                                     margin: EdgeInsets.only(top: 5),
                                     child: Text(
@@ -377,7 +379,7 @@ class _ProfileEditScreenState extends State<ProfileEditScreen> {
                                     borderRadius: BorderRadius.circular(20),
                                   ),
                                   height:
-                                  MediaQuery.of(context).size.height * 0.07,
+                                      MediaQuery.of(context).size.height * 0.07,
                                   width: MediaQuery.of(context).size.width,
                                   child: Container(
                                     child: Padding(
@@ -466,15 +468,17 @@ class _ProfileEditScreenState extends State<ProfileEditScreen> {
                                     borderRadius: BorderRadius.circular(20),
                                   ),
                                   height:
-                                  MediaQuery.of(context).size.height * 0.07,
+                                      MediaQuery.of(context).size.height * 0.07,
                                   width:
-                                  MediaQuery.of(context).size.width * 0.30,
+                                      MediaQuery.of(context).size.width * 0.30,
                                   child: Padding(
                                     padding: EdgeInsets.only(left: 0.0),
                                     child: CountryCodePicker(
                                       enabled: false,
                                       padding: EdgeInsets.zero,
-                                      initialSelection: SharedPreferenceHelper.getString(Preferences.phone_code),
+                                      initialSelection:
+                                          SharedPreferenceHelper.getString(
+                                              Preferences.phone_code),
                                       showDropDownButton: true,
                                       dialogSize: Size.fromRadius(200),
                                       onInit: (country) {
@@ -505,9 +509,9 @@ class _ProfileEditScreenState extends State<ProfileEditScreen> {
                                     borderRadius: BorderRadius.circular(20),
                                   ),
                                   height:
-                                  MediaQuery.of(context).size.height * 0.07,
+                                      MediaQuery.of(context).size.height * 0.07,
                                   width:
-                                  MediaQuery.of(context).size.width * 0.56,
+                                      MediaQuery.of(context).size.width * 0.56,
                                   child: Padding(
                                     padding: const EdgeInsets.only(left: 20),
                                     child: TextField(
@@ -594,7 +598,7 @@ class _ProfileEditScreenState extends State<ProfileEditScreen> {
                                     borderRadius: BorderRadius.circular(20),
                                   ),
                                   height:
-                                  MediaQuery.of(context).size.height * 0.07,
+                                      MediaQuery.of(context).size.height * 0.07,
                                   width: MediaQuery.of(context).size.width,
                                   child: Container(
                                     child: Padding(
@@ -625,7 +629,7 @@ class _ProfileEditScreenState extends State<ProfileEditScreen> {
                                 ),
                                 Visibility(
                                   visible:
-                                  restaurantError!.isEmpty ? false : true,
+                                      restaurantError!.isEmpty ? false : true,
                                   child: Container(
                                     margin: EdgeInsets.only(top: 5),
                                     child: Text(
@@ -680,7 +684,7 @@ class _ProfileEditScreenState extends State<ProfileEditScreen> {
                                     borderRadius: BorderRadius.circular(20),
                                   ),
                                   height:
-                                  MediaQuery.of(context).size.height * 0.07,
+                                      MediaQuery.of(context).size.height * 0.07,
                                   width: MediaQuery.of(context).size.width,
                                   child: Container(
                                     child: Padding(
@@ -767,7 +771,7 @@ class _ProfileEditScreenState extends State<ProfileEditScreen> {
                                     borderRadius: BorderRadius.circular(20),
                                   ),
                                   height:
-                                  MediaQuery.of(context).size.height * 0.07,
+                                      MediaQuery.of(context).size.height * 0.07,
                                   width: MediaQuery.of(context).size.width,
                                   child: Container(
                                     child: Padding(
@@ -854,7 +858,7 @@ class _ProfileEditScreenState extends State<ProfileEditScreen> {
                                     borderRadius: BorderRadius.circular(20),
                                   ),
                                   height:
-                                  MediaQuery.of(context).size.height * 0.07,
+                                      MediaQuery.of(context).size.height * 0.07,
                                   width: MediaQuery.of(context).size.width,
                                   child: Container(
                                     child: Padding(
@@ -941,7 +945,7 @@ class _ProfileEditScreenState extends State<ProfileEditScreen> {
                                     borderRadius: BorderRadius.circular(20),
                                   ),
                                   height:
-                                  MediaQuery.of(context).size.height * 0.07,
+                                      MediaQuery.of(context).size.height * 0.07,
                                   width: MediaQuery.of(context).size.width,
                                   child: Container(
                                     child: Padding(
@@ -956,7 +960,7 @@ class _ProfileEditScreenState extends State<ProfileEditScreen> {
                                         onEditingComplete: () =>
                                             node.nextFocus(),
                                         controller:
-                                        businessLicenseNumberController,
+                                            businessLicenseNumberController,
                                         cursorColor: Palette.loginhead,
                                         decoration: InputDecoration(
                                             hintText: getTranslated(context,
@@ -1029,7 +1033,7 @@ class _ProfileEditScreenState extends State<ProfileEditScreen> {
                                     borderRadius: BorderRadius.circular(20),
                                   ),
                                   height:
-                                  MediaQuery.of(context).size.height * 0.07,
+                                      MediaQuery.of(context).size.height * 0.07,
                                   width: MediaQuery.of(context).size.width,
                                   child: Container(
                                     child: Padding(
@@ -1121,7 +1125,7 @@ class _ProfileEditScreenState extends State<ProfileEditScreen> {
                                     borderRadius: BorderRadius.circular(20),
                                   ),
                                   height:
-                                  MediaQuery.of(context).size.height * 0.07,
+                                      MediaQuery.of(context).size.height * 0.07,
                                   width: MediaQuery.of(context).size.width,
                                   child: Container(
                                     child: Padding(
@@ -1180,13 +1184,13 @@ class _ProfileEditScreenState extends State<ProfileEditScreen> {
               ),
               isProgress
                   ? Positioned(
-                  top: 0,
-                  left: 0,
-                  right: 0,
-                  bottom: 0,
-                  child: Container(
-                      color: Colors.black12,
-                      child: DeviceUtils.showProgress(true)))
+                      top: 0,
+                      left: 0,
+                      right: 0,
+                      bottom: 0,
+                      child: Container(
+                          color: Colors.black12,
+                          child: DeviceUtils.showProgress(true)))
                   : Container(),
             ],
           )),
@@ -1225,7 +1229,7 @@ class _ProfileEditScreenState extends State<ProfileEditScreen> {
             Map<String, String> param = new HashMap();
             if (foodImage != null) {
               try {
-                String imageB64 =base64Encode(foodImage!.readAsBytesSync());
+                String imageB64 = base64Encode(foodImage!.readAsBytesSync());
                 param['image'] = imageB64;
               } catch (e) {
                 DeviceUtils.toastMessage("error is ${e.toString()}");
@@ -1287,11 +1291,8 @@ class _ProfileEditScreenState extends State<ProfileEditScreen> {
             await updateProfileVendor(param).then((value) {
               if (value.data != null) {
                 Navigator.of(context).pop();
-                Navigator.pushReplacement(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) =>
-                            ProfileScreen()));
+                Navigator.pushReplacement(context,
+                    MaterialPageRoute(builder: (context) => ProfileScreen()));
               } else {
                 isProgress = false;
               }
@@ -1317,23 +1318,21 @@ class _ProfileEditScreenState extends State<ProfileEditScreen> {
   }
 
   pickImageFromCamera(ImageSource source) {
-    this.setState(() async{
+    this.setState(() async {
       ImagePicker imagePicker = ImagePicker();
       await imagePicker.pickImage(source: source).then((value) {
         foodImage = File(value!.path);
-        setState(() {
-        });
+        setState(() {});
       });
     });
   }
 
   pickImageFromGallery(ImageSource source) {
-    this.setState(() async{
+    this.setState(() async {
       ImagePicker imagePicker = ImagePicker();
       await imagePicker.pickImage(source: source).then((value) {
         foodImage = File(value!.path);
-        setState(() {
-        });
+        setState(() {});
       });
     });
   }

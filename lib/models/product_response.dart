@@ -1,8 +1,7 @@
-import 'package:mealup_restaurant_side/retrofit/api_client.dart';
-import 'package:mealup_restaurant_side/retrofit/api_header.dart';
-import 'package:mealup_restaurant_side/retrofit/base_model.dart';
-import 'package:mealup_restaurant_side/retrofit/server_error.dart';
-
+import 'package:homchf_chef_side/retrofit/api_client.dart';
+import 'package:homchf_chef_side/retrofit/api_header.dart';
+import 'package:homchf_chef_side/retrofit/base_model.dart';
+import 'package:homchf_chef_side/retrofit/server_error.dart';
 
 Future<BaseModel<ProductResponse>> getProduct(int? id) async {
   ProductResponse response;
@@ -15,7 +14,6 @@ Future<BaseModel<ProductResponse>> getProduct(int? id) async {
   return BaseModel()..data = response;
 }
 
-
 class ProductResponse {
   bool? _success;
   List<ProductData>? _productData;
@@ -23,12 +21,10 @@ class ProductResponse {
   bool? get success => _success;
   List<ProductData>? get productData => _productData;
 
-  ProductResponse({
-      bool? success, 
-      List<ProductData>? data}){
+  ProductResponse({bool? success, List<ProductData>? data}) {
     _success = success;
     _productData = productData;
-}
+  }
 
   ProductResponse.fromJson(dynamic json) {
     _success = json["success"];
@@ -48,7 +44,6 @@ class ProductResponse {
     }
     return map;
   }
-
 }
 
 class ProductData {
@@ -80,20 +75,20 @@ class ProductData {
   String? get createdAt => _createdAt;
   String? get updatedAt => _updatedAt;
 
-  ProductData({
-      int? id, 
-      int? vendorId, 
-      int? menuId, 
-      String? name, 
-      String? image, 
-      String? price, 
-      String? description, 
-      String? type, 
-      String? qtyReset, 
-      int? status, 
-      int? itemResetValue, 
-      String? createdAt, 
-      String? updatedAt}){
+  ProductData(
+      {int? id,
+      int? vendorId,
+      int? menuId,
+      String? name,
+      String? image,
+      String? price,
+      String? description,
+      String? type,
+      String? qtyReset,
+      int? status,
+      int? itemResetValue,
+      String? createdAt,
+      String? updatedAt}) {
     _id = id;
     _vendorId = vendorId;
     _menuId = menuId;
@@ -107,7 +102,7 @@ class ProductData {
     _itemResetValue = itemResetValue;
     _createdAt = createdAt;
     _updatedAt = updatedAt;
-}
+  }
 
   ProductData.fromJson(dynamic json) {
     _id = json["id"];
@@ -142,5 +137,4 @@ class ProductData {
     map["updated_at"] = _updatedAt;
     return map;
   }
-
 }

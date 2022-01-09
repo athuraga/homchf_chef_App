@@ -1,12 +1,12 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:mealup_restaurant_side/config/Palette.dart';
-import 'package:mealup_restaurant_side/constant/app_strings.dart';
-import 'package:mealup_restaurant_side/utilities/device_utils.dart';
-import 'package:mealup_restaurant_side/localization/localization_constant.dart';
-import 'package:mealup_restaurant_side/models/faq_response.dart';
-import 'package:mealup_restaurant_side/retrofit/base_model.dart';
+import 'package:homchf_chef_side/config/Palette.dart';
+import 'package:homchf_chef_side/constant/app_strings.dart';
+import 'package:homchf_chef_side/utilities/device_utils.dart';
+import 'package:homchf_chef_side/localization/localization_constant.dart';
+import 'package:homchf_chef_side/models/faq_response.dart';
+import 'package:homchf_chef_side/retrofit/base_model.dart';
 
 class FaqScreen extends StatefulWidget {
   @override
@@ -68,11 +68,13 @@ class _FaqScreenState extends State<FaqScreen> {
                   itemCount: data.data!.length,
                   itemBuilder: (_, index) {
                     return ExpansionTile(
-                        title: Text('${index + 1}.  ${data.data![index].question.toString()}'),
+                        title: Text(
+                            '${index + 1}.  ${data.data![index].question.toString()}'),
                         children: [
                           ...data.data!.map((e) {
                             return Padding(
-                              padding: const EdgeInsets.only(left: 20, right: 20, top: 10, bottom: 10),
+                              padding: const EdgeInsets.only(
+                                  left: 20, right: 20, top: 10, bottom: 10),
                               child: Text(e.answer.toString()),
                             );
                           }).toList(),

@@ -1,13 +1,13 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:mealup_restaurant_side/config/Palette.dart';
-import 'package:mealup_restaurant_side/constant/app_strings.dart';
-import 'package:mealup_restaurant_side/localization/localization_constant.dart';
-import 'package:mealup_restaurant_side/screens/insight/InsightScreen.dart';
-import 'package:mealup_restaurant_side/screens/orders/HomeScreen.dart';
-import 'package:mealup_restaurant_side/screens/product/ProductScreen.dart';
-import 'package:mealup_restaurant_side/screens/profile/ProfileScreen.dart';
+import 'package:homchf_chef_side/config/Palette.dart';
+import 'package:homchf_chef_side/constant/app_strings.dart';
+import 'package:homchf_chef_side/localization/localization_constant.dart';
+import 'package:homchf_chef_side/screens/insight/InsightScreen.dart';
+import 'package:homchf_chef_side/screens/orders/HomeScreen.dart';
+import 'package:homchf_chef_side/screens/product/ProductScreen.dart';
+import 'package:homchf_chef_side/screens/profile/ProfileScreen.dart';
 
 class MainScreen extends StatefulWidget {
   @override
@@ -43,14 +43,15 @@ class _MainScreenState extends State<MainScreen> {
                       child: Material(
                         type: MaterialType.transparency,
                         child: InkWell(
-                          onTap: () {
-                            _currentIndex = 0;
-                            navigateTo(_currentIndex);
-                          },
-                          child: _currentIndex == 0
-                              ? bottomIcon(Colors.green,"bag.svg", getTranslated(context, orders)! )
-                              : bottomIcon(Colors.white,"bag.svg", getTranslated(context, orders)! )
-                        ),
+                            onTap: () {
+                              _currentIndex = 0;
+                              navigateTo(_currentIndex);
+                            },
+                            child: _currentIndex == 0
+                                ? bottomIcon(Colors.green, "bag.svg",
+                                    getTranslated(context, orders)!)
+                                : bottomIcon(Colors.white, "bag.svg",
+                                    getTranslated(context, orders)!)),
                       ),
                     ),
                   ),
@@ -65,9 +66,10 @@ class _MainScreenState extends State<MainScreen> {
                               navigateTo(_currentIndex);
                             },
                             child: _currentIndex == 1
-                                ? bottomIcon(Colors.green,"chart.svg",getTranslated(context, insight)!)
-                                : bottomIcon(Colors.white,"chart.svg",getTranslated(context, insight)!)
-                        ),
+                                ? bottomIcon(Colors.green, "chart.svg",
+                                    getTranslated(context, insight)!)
+                                : bottomIcon(Colors.white, "chart.svg",
+                                    getTranslated(context, insight)!)),
                       ),
                     ),
                   ),
@@ -82,9 +84,10 @@ class _MainScreenState extends State<MainScreen> {
                               navigateTo(_currentIndex);
                             },
                             child: _currentIndex == 2
-                                ? bottomIcon(Colors.green,"leaf.svg",getTranslated(context, product)!)
-                                : bottomIcon(Colors.white,"leaf.svg",getTranslated(context, product)!)
-                        ),
+                                ? bottomIcon(Colors.green, "leaf.svg",
+                                    getTranslated(context, product)!)
+                                : bottomIcon(Colors.white, "leaf.svg",
+                                    getTranslated(context, product)!)),
                       ),
                     ),
                   ),
@@ -99,9 +102,10 @@ class _MainScreenState extends State<MainScreen> {
                               navigateTo(_currentIndex);
                             },
                             child: _currentIndex == 3
-                                ? bottomIcon(Colors.green,"profile.svg",getTranslated(context, profile)!)
-                                : bottomIcon(Colors.white,"profile.svg",getTranslated(context, profile)!)
-                        ),
+                                ? bottomIcon(Colors.green, "profile.svg",
+                                    getTranslated(context, profile)!)
+                                : bottomIcon(Colors.white, "profile.svg",
+                                    getTranslated(context, profile)!)),
                       ),
                     ),
                   ),
@@ -110,7 +114,7 @@ class _MainScreenState extends State<MainScreen> {
     );
   }
 
-  Column bottomIcon(Color color,String icon, String title) {
+  Column bottomIcon(Color color, String icon, String title) {
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
@@ -120,9 +124,12 @@ class _MainScreenState extends State<MainScreen> {
           height: 25,
           width: 25,
         ),
-        SizedBox(height: 5,),
+        SizedBox(
+          height: 5,
+        ),
         Text(
-          title, style: TextStyle(color: color, fontSize: 12),
+          title,
+          style: TextStyle(color: color, fontSize: 12),
         )
       ],
     );

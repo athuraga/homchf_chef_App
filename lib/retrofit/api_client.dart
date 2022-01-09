@@ -1,19 +1,19 @@
 import 'package:dio/dio.dart';
-import 'package:mealup_restaurant_side/models/common_response.dart';
-import 'package:mealup_restaurant_side/models/earning_history_response.dart';
-import 'package:mealup_restaurant_side/models/faq_response.dart';
-import 'package:mealup_restaurant_side/models/insights_response.dart';
-import 'package:mealup_restaurant_side/models/menu.dart';
-import 'package:mealup_restaurant_side/models/my_cash_balance_response.dart';
-import 'package:mealup_restaurant_side/models/orders_response.dart';
-import 'package:mealup_restaurant_side/models/product_customization_response.dart';
-import 'package:mealup_restaurant_side/models/product_response.dart';
-import 'package:mealup_restaurant_side/models/user.dart';
-import 'package:mealup_restaurant_side/models/user_address_list_model.dart';
+import 'package:homchf_chef_side/models/common_response.dart';
+import 'package:homchf_chef_side/models/earning_history_response.dart';
+import 'package:homchf_chef_side/models/faq_response.dart';
+import 'package:homchf_chef_side/models/insights_response.dart';
+import 'package:homchf_chef_side/models/menu.dart';
+import 'package:homchf_chef_side/models/my_cash_balance_response.dart';
+import 'package:homchf_chef_side/models/orders_response.dart';
+import 'package:homchf_chef_side/models/product_customization_response.dart';
+import 'package:homchf_chef_side/models/product_response.dart';
+import 'package:homchf_chef_side/models/user.dart';
+import 'package:homchf_chef_side/models/user_address_list_model.dart';
 
-import 'package:mealup_restaurant_side/models/vendor_detail.dart';
-import 'package:mealup_restaurant_side/models/vendor_setting_response.dart';
-import 'package:mealup_restaurant_side/retrofit/apis.dart';
+import 'package:homchf_chef_side/models/vendor_detail.dart';
+import 'package:homchf_chef_side/models/vendor_setting_response.dart';
+import 'package:homchf_chef_side/retrofit/apis.dart';
 import 'package:retrofit/retrofit.dart';
 
 part 'api_client.g.dart';

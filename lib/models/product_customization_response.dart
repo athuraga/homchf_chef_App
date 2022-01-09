@@ -1,10 +1,10 @@
-import 'package:mealup_restaurant_side/retrofit/api_client.dart';
-import 'package:mealup_restaurant_side/retrofit/api_header.dart';
-import 'package:mealup_restaurant_side/retrofit/base_model.dart';
-import 'package:mealup_restaurant_side/retrofit/server_error.dart';
+import 'package:homchf_chef_side/retrofit/api_client.dart';
+import 'package:homchf_chef_side/retrofit/api_header.dart';
+import 'package:homchf_chef_side/retrofit/base_model.dart';
+import 'package:homchf_chef_side/retrofit/server_error.dart';
 
-
-Future<BaseModel<ProductCustomizationResponse>> getCustomization(int? id) async {
+Future<BaseModel<ProductCustomizationResponse>> getCustomization(
+    int? id) async {
   ProductCustomizationResponse response;
   try {
     response = await ApiClient(ApiHeader().dioData()).getCustomization(id);
@@ -15,7 +15,6 @@ Future<BaseModel<ProductCustomizationResponse>> getCustomization(int? id) async 
   return BaseModel()..data = response;
 }
 
-
 class ProductCustomizationResponse {
   bool? _success;
   List<CustomizationData>? _customizationData;
@@ -23,12 +22,11 @@ class ProductCustomizationResponse {
   bool? get success => _success;
   List<CustomizationData>? get customizationData => _customizationData;
 
-  ProductCustomizationResponse({
-      bool? success, 
-      List<CustomizationData>? customizationData}){
+  ProductCustomizationResponse(
+      {bool? success, List<CustomizationData>? customizationData}) {
     _success = success;
     _customizationData = customizationData;
-}
+  }
 
   ProductCustomizationResponse.fromJson(dynamic json) {
     _success = json["success"];
@@ -48,9 +46,7 @@ class ProductCustomizationResponse {
     }
     return map;
   }
-
 }
-
 
 class CustomizationData {
   int? _id;
@@ -73,16 +69,16 @@ class CustomizationData {
   int? get maxItemSelection => _maxItemSelection;
   String? get custimazationItem => _custimazationItem;
 
-  CustomizationData({
-      int? id, 
-      String? name, 
-      int? vendorId, 
-      int? submenuId, 
-      int? menuId, 
-      String? type, 
-      int? minItemSelection, 
-      int? maxItemSelection, 
-      String? custimazationItem}){
+  CustomizationData(
+      {int? id,
+      String? name,
+      int? vendorId,
+      int? submenuId,
+      int? menuId,
+      String? type,
+      int? minItemSelection,
+      int? maxItemSelection,
+      String? custimazationItem}) {
     _id = id;
     _name = name;
     _vendorId = vendorId;
@@ -92,7 +88,7 @@ class CustomizationData {
     _minItemSelection = minItemSelection;
     _maxItemSelection = maxItemSelection;
     _custimazationItem = custimazationItem;
-}
+  }
 
   CustomizationData.fromJson(dynamic json) {
     _id = json["id"];
@@ -119,5 +115,4 @@ class CustomizationData {
     map["custimazation_item"] = _custimazationItem;
     return map;
   }
-
 }

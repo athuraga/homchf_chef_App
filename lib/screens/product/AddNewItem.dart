@@ -7,15 +7,15 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_advanced_switch/flutter_advanced_switch.dart';
 import 'package:image_picker/image_picker.dart';
-import 'package:mealup_restaurant_side/config/Palette.dart';
-import 'package:mealup_restaurant_side/constant/app_strings.dart';
-import 'package:mealup_restaurant_side/localization/localization_constant.dart';
-import 'package:mealup_restaurant_side/models/common_response.dart';
-import 'package:mealup_restaurant_side/models/menu.dart';
-import 'package:mealup_restaurant_side/models/product_response.dart';
-import 'package:mealup_restaurant_side/retrofit/base_model.dart';
-import 'package:mealup_restaurant_side/screens/product/ProductScreen.dart';
-import 'package:mealup_restaurant_side/utilities/device_utils.dart';
+import 'package:homchf_chef_side/config/Palette.dart';
+import 'package:homchf_chef_side/constant/app_strings.dart';
+import 'package:homchf_chef_side/localization/localization_constant.dart';
+import 'package:homchf_chef_side/models/common_response.dart';
+import 'package:homchf_chef_side/models/menu.dart';
+import 'package:homchf_chef_side/models/product_response.dart';
+import 'package:homchf_chef_side/retrofit/base_model.dart';
+import 'package:homchf_chef_side/screens/product/ProductScreen.dart';
+import 'package:homchf_chef_side/utilities/device_utils.dart';
 import 'package:sizer/sizer.dart';
 import 'package:toggle_switch/toggle_switch.dart';
 
@@ -64,14 +64,21 @@ class _AddNewItemState extends State<AddNewItem> {
     advancedSwitchController = AdvancedSwitchController();
     foodImage = foodImage;
     isProgress = false;
-    isEdit ? itemNameController!.text = productData!.name! : itemNameController!.text = '';
-    isEdit ? itemPriceController!.text = productData!.price! : itemPriceController!.text = '';
-    isEdit ? itemDescController!.text = productData!.description! : itemDescController!.text = '';
+    isEdit
+        ? itemNameController!.text = productData!.name!
+        : itemNameController!.text = '';
+    isEdit
+        ? itemPriceController!.text = productData!.price!
+        : itemPriceController!.text = '';
+    isEdit
+        ? itemDescController!.text = productData!.description!
+        : itemDescController!.text = '';
     isEdit
         ? itemResetController!.text = productData!.itemResetValue.toString()
         : itemResetController!.text = '';
     isEdit
-        ? advancedSwitchController!.value = productData!.status == 1 ? true : false
+        ? advancedSwitchController!.value =
+            productData!.status == 1 ? true : false
         : advancedSwitchController!.value = false;
 
     isEdit ? dropdownValue = productData!.type : dropdownValue = dropdownValue;
@@ -94,7 +101,10 @@ class _AddNewItemState extends State<AddNewItem> {
         centerTitle: true,
         title: Text(
           isEdit ? getTranslated(context, edit_item)! : data!.name!,
-          style: TextStyle(fontFamily: "ProximaBold", color: Palette.loginhead, fontSize: 17),
+          style: TextStyle(
+              fontFamily: "ProximaBold",
+              color: Palette.loginhead,
+              fontSize: 17),
         ),
         leading: IconButton(
           icon: Icon(
@@ -141,20 +151,33 @@ class _AddNewItemState extends State<AddNewItem> {
                                     height: 20.w,
                                     margin: EdgeInsets.only(left: 10, right: 5),
                                     child: ClipRRect(
-                                      borderRadius: BorderRadius.all(Radius.circular(10)),
-                                      child: foodImage != null
-                                          ? Image.file(foodImage!, fit: BoxFit.fill,)
-                                          : isEdit
-                                              ? Image(
-                                                  image: NetworkImage(productData!.image!),
-                                                  fit: BoxFit.fill,
-                                                )
-                                              : foodImage   != null ? Image.file(foodImage!, fit: BoxFit.fill,) : Image.asset('assets/images/background.png', fit: BoxFit.fill,)
-                                    )),
+                                        borderRadius: BorderRadius.all(
+                                            Radius.circular(10)),
+                                        child: foodImage != null
+                                            ? Image.file(
+                                                foodImage!,
+                                                fit: BoxFit.fill,
+                                              )
+                                            : isEdit
+                                                ? Image(
+                                                    image: NetworkImage(
+                                                        productData!.image!),
+                                                    fit: BoxFit.fill,
+                                                  )
+                                                : foodImage != null
+                                                    ? Image.file(
+                                                        foodImage!,
+                                                        fit: BoxFit.fill,
+                                                      )
+                                                    : Image.asset(
+                                                        'assets/images/background.png',
+                                                        fit: BoxFit.fill,
+                                                      ))),
                                 Row(
                                   children: [
                                     SizedBox(
-                                      width: MediaQuery.of(context).size.width * 0.04,
+                                      width: MediaQuery.of(context).size.width *
+                                          0.04,
                                     ),
                                     Icon(
                                       Icons.camera_alt_outlined,
@@ -162,10 +185,12 @@ class _AddNewItemState extends State<AddNewItem> {
                                       size: 25,
                                     ),
                                     SizedBox(
-                                      width: MediaQuery.of(context).size.width * 0.04,
+                                      width: MediaQuery.of(context).size.width *
+                                          0.04,
                                     ),
                                     Text(
-                                      getTranslated(context, add_food_item_image)!,
+                                      getTranslated(
+                                          context, add_food_item_image)!,
                                       style: TextStyle(
                                           color: Palette.green,
                                           fontSize: 12,
@@ -200,21 +225,28 @@ class _AddNewItemState extends State<AddNewItem> {
                                 children: [
                                   Card(
                                     shape: RoundedRectangleBorder(
-                                      side: BorderSide(color: Colors.black12, width: 1),
+                                      side: BorderSide(
+                                          color: Colors.black12, width: 1),
                                       borderRadius: BorderRadius.circular(20),
                                     ),
                                     child: Padding(
                                       padding: const EdgeInsets.only(
-                                          left: 10, right: 10, top: 0, bottom: 0),
+                                          left: 10,
+                                          right: 10,
+                                          top: 0,
+                                          bottom: 0),
                                       child: TextField(
                                         controller: itemNameController,
                                         cursorColor: Palette.loginhead,
                                         decoration: InputDecoration(
-                                            hintText: getTranslated(context, item_name),
-                                            hintStyle:
-                                                TextStyle(color: Palette.switchs, fontSize: 16),
+                                            hintText: getTranslated(
+                                                context, item_name),
+                                            hintStyle: TextStyle(
+                                                color: Palette.switchs,
+                                                fontSize: 16),
                                             border: InputBorder.none),
-                                        style: TextStyle(color: Colors.black, fontSize: 16),
+                                        style: TextStyle(
+                                            color: Colors.black, fontSize: 16),
                                       ),
                                     ),
                                   ),
@@ -246,22 +278,29 @@ class _AddNewItemState extends State<AddNewItem> {
                                 children: [
                                   Card(
                                     shape: RoundedRectangleBorder(
-                                      side: BorderSide(color: Colors.black12, width: 1),
+                                      side: BorderSide(
+                                          color: Colors.black12, width: 1),
                                       borderRadius: BorderRadius.circular(20),
                                     ),
                                     child: Padding(
-                                      padding:
-                                          EdgeInsets.only(left: 10, right: 10, top: 0, bottom: 0),
+                                      padding: EdgeInsets.only(
+                                          left: 10,
+                                          right: 10,
+                                          top: 0,
+                                          bottom: 0),
                                       child: TextField(
                                         controller: itemPriceController,
                                         cursorColor: Palette.loginhead,
                                         keyboardType: TextInputType.number,
                                         decoration: InputDecoration(
-                                            hintText: getTranslated(context, item_price),
-                                            hintStyle:
-                                                TextStyle(color: Palette.switchs, fontSize: 16),
+                                            hintText: getTranslated(
+                                                context, item_price),
+                                            hintStyle: TextStyle(
+                                                color: Palette.switchs,
+                                                fontSize: 16),
                                             border: InputBorder.none),
-                                        style: TextStyle(color: Colors.black, fontSize: 16),
+                                        style: TextStyle(
+                                            color: Colors.black, fontSize: 16),
                                       ),
                                     ),
                                   ),
@@ -293,21 +332,28 @@ class _AddNewItemState extends State<AddNewItem> {
                                 children: [
                                   Card(
                                     shape: RoundedRectangleBorder(
-                                      side: BorderSide(color: Colors.black12, width: 1),
+                                      side: BorderSide(
+                                          color: Colors.black12, width: 1),
                                       borderRadius: BorderRadius.circular(20),
                                     ),
                                     child: Padding(
                                       padding: const EdgeInsets.only(
-                                          left: 10, right: 10, top: 0, bottom: 0),
+                                          left: 10,
+                                          right: 10,
+                                          top: 0,
+                                          bottom: 0),
                                       child: TextField(
                                         controller: itemDescController,
                                         cursorColor: Palette.loginhead,
                                         decoration: InputDecoration(
-                                            hintText: getTranslated(context, description),
-                                            hintStyle:
-                                                TextStyle(color: Palette.switchs, fontSize: 16),
+                                            hintText: getTranslated(
+                                                context, description),
+                                            hintStyle: TextStyle(
+                                                color: Palette.switchs,
+                                                fontSize: 16),
                                             border: InputBorder.none),
-                                        style: TextStyle(color: Colors.black, fontSize: 16),
+                                        style: TextStyle(
+                                            color: Colors.black, fontSize: 16),
                                       ),
                                     ),
                                   ),
@@ -340,12 +386,14 @@ class _AddNewItemState extends State<AddNewItem> {
                                 margin: EdgeInsets.only(left: 0, right: 0),
                                 child: Card(
                                   shape: RoundedRectangleBorder(
-                                    side: BorderSide(color: Colors.black12, width: 1),
+                                    side: BorderSide(
+                                        color: Colors.black12, width: 1),
                                     borderRadius: BorderRadius.circular(20),
                                   ),
                                   child: Center(
                                     child: Container(
-                                      padding: EdgeInsets.only(left: 20, right: 20),
+                                      padding:
+                                          EdgeInsets.only(left: 20, right: 20),
                                       child: DropdownButton(
                                         value: dropdownValue,
                                         underline: SizedBox(),
@@ -357,14 +405,19 @@ class _AddNewItemState extends State<AddNewItem> {
                                         iconSize: 30,
                                         elevation: 16,
                                         isDense: true,
-                                        style: const TextStyle(color: Palette.loginhead),
+                                        style: const TextStyle(
+                                            color: Palette.loginhead),
                                         onChanged: (dynamic newValue) {
                                           setState(() {
                                             dropdownValue = newValue;
                                             print('value $newValue ');
                                           });
                                         },
-                                        items: <String>['none', 'veg', 'non-veg'].map((item) {
+                                        items: <String>[
+                                          'none',
+                                          'veg',
+                                          'non-veg'
+                                        ].map((item) {
                                           //print('value ${item.name} ');
                                           return new DropdownMenuItem<String>(
                                             child: Text(item),
@@ -402,24 +455,32 @@ class _AddNewItemState extends State<AddNewItem> {
                                 children: [
                                   Card(
                                     shape: RoundedRectangleBorder(
-                                      side: BorderSide(color: Colors.black12, width: 1),
+                                      side: BorderSide(
+                                          color: Colors.black12, width: 1),
                                       borderRadius: BorderRadius.circular(20),
                                     ),
                                     child: Padding(
                                       padding: const EdgeInsets.only(
-                                          left: 10, right: 10, top: 0, bottom: 0),
+                                          left: 10,
+                                          right: 10,
+                                          top: 0,
+                                          bottom: 0),
                                       child: TextField(
-                                        enabled: isResetDaily == 0 ? false : true,
+                                        enabled:
+                                            isResetDaily == 0 ? false : true,
                                         controller: itemResetController,
                                         cursorColor: Palette.loginhead,
                                         keyboardType: TextInputType.number,
                                         decoration: InputDecoration(
-                                            hintText: getTranslated(context, item_reset_value),
+                                            hintText: getTranslated(
+                                                context, item_reset_value),
                                             focusColor: Colors.red,
-                                            hintStyle:
-                                                TextStyle(color: Palette.switchs, fontSize: 16),
+                                            hintStyle: TextStyle(
+                                                color: Palette.switchs,
+                                                fontSize: 16),
                                             border: InputBorder.none),
-                                        style: TextStyle(color: Colors.black, fontSize: 16),
+                                        style: TextStyle(
+                                            color: Colors.black, fontSize: 16),
                                       ),
                                     ),
                                   ),
@@ -493,7 +554,8 @@ class _AddNewItemState extends State<AddNewItem> {
                                 controller: advancedSwitchController,
                                 activeColor: Palette.green,
                                 inactiveColor: Palette.removeacct,
-                                borderRadius: BorderRadius.all(const Radius.circular(5)),
+                                borderRadius:
+                                    BorderRadius.all(const Radius.circular(5)),
                                 width: 70,
                                 activeChild: Text('Yes'),
                                 inactiveChild: Text('No'),
@@ -513,7 +575,8 @@ class _AddNewItemState extends State<AddNewItem> {
                               mainAxisAlignment: MainAxisAlignment.end,
                               children: [
                                 SizedBox(
-                                  width: MediaQuery.of(context).size.width * 0.04,
+                                  width:
+                                      MediaQuery.of(context).size.width * 0.04,
                                 ),
                                 Icon(
                                   Icons.add,
@@ -521,10 +584,12 @@ class _AddNewItemState extends State<AddNewItem> {
                                   size: 25,
                                 ),
                                 SizedBox(
-                                  width: MediaQuery.of(context).size.width * 0.04,
+                                  width:
+                                      MediaQuery.of(context).size.width * 0.04,
                                 ),
                                 Text(
-                                  getTranslated(context, add_customization_options)!,
+                                  getTranslated(
+                                      context, add_customization_options)!,
                                   style: TextStyle(
                                       color: Palette.green,
                                       fontSize: 15,
@@ -569,9 +634,11 @@ class _AddNewItemState extends State<AddNewItem> {
               param['description'] = itemDescController!.text.toString();
               param['type'] = dropdownValue;
               param['qty_reset'] = isResetDaily == 0 ? 'never' : 'daily';
-              param['status'] = advancedSwitchController!.value == true ? '1' : '0';
-              param['item_reset_value'] =
-                  itemResetController!.text == 'null' ? '0' : itemResetController!.text.toString();
+              param['status'] =
+                  advancedSwitchController!.value == true ? '1' : '0';
+              param['item_reset_value'] = itemResetController!.text == 'null'
+                  ? '0'
+                  : itemResetController!.text.toString();
               DeviceUtils.showProgress(true);
               Future<BaseModel<CommonResponse>> s;
               if (isEdit) {
@@ -582,8 +649,8 @@ class _AddNewItemState extends State<AddNewItem> {
               setState(() {
                 isProgress = true;
               });
-              await s.then((value) => Navigator.of(context)
-                  .pushReplacement(MaterialPageRoute(builder: (context) => ProductScreen())));
+              await s.then((value) => Navigator.of(context).pushReplacement(
+                  MaterialPageRoute(builder: (context) => ProductScreen())));
             }
           },
           child: Container(
@@ -594,7 +661,10 @@ class _AddNewItemState extends State<AddNewItem> {
                 isEdit
                     ? getTranslated(context, update_item)!
                     : getTranslated(context, add_this_item)!,
-                style: TextStyle(fontSize: 15, color: Palette.white, fontFamily: proxima_nova_reg),
+                style: TextStyle(
+                    fontSize: 15,
+                    color: Palette.white,
+                    fontFamily: proxima_nova_reg),
               ),
             ),
           )),
@@ -602,7 +672,7 @@ class _AddNewItemState extends State<AddNewItem> {
   }
 
   pickImageFromCamera(ImageSource source) {
-    this.setState(() async{
+    this.setState(() async {
       ImagePicker imagePicker = ImagePicker();
       await imagePicker.pickImage(source: source).then((value) {
         foodImage = File(value!.path);
@@ -611,7 +681,7 @@ class _AddNewItemState extends State<AddNewItem> {
   }
 
   pickImageFromGallery(ImageSource source) {
-    this.setState(() async{
+    this.setState(() async {
       ImagePicker imagePicker = ImagePicker();
       await imagePicker.pickImage(source: source).then((value) {
         foodImage = File(value!.path);

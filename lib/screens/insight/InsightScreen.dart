@@ -3,14 +3,14 @@ import 'dart:ffi';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:mealup_restaurant_side/config/Palette.dart';
-import 'package:mealup_restaurant_side/constant/app_strings.dart';
-import 'package:mealup_restaurant_side/localization/localization_constant.dart';
-import 'package:mealup_restaurant_side/models/insights_response.dart';
-import 'package:mealup_restaurant_side/retrofit/base_model.dart';
-import 'package:mealup_restaurant_side/utilities/device_utils.dart';
-import 'package:mealup_restaurant_side/utilities/prefConstatnt.dart';
-import 'package:mealup_restaurant_side/utilities/preference.dart';
+import 'package:homchf_chef_side/config/Palette.dart';
+import 'package:homchf_chef_side/constant/app_strings.dart';
+import 'package:homchf_chef_side/localization/localization_constant.dart';
+import 'package:homchf_chef_side/models/insights_response.dart';
+import 'package:homchf_chef_side/retrofit/base_model.dart';
+import 'package:homchf_chef_side/utilities/device_utils.dart';
+import 'package:homchf_chef_side/utilities/prefConstatnt.dart';
+import 'package:homchf_chef_side/utilities/preference.dart';
 import 'package:sizer/sizer.dart';
 import 'package:syncfusion_flutter_charts/charts.dart';
 
@@ -37,7 +37,8 @@ class _InsightScreenState extends State<InsightScreen> {
   void initState() {
     super.initState();
     insightFuture = getInsights();
-    currencySymbol = SharedPreferenceHelper.getString(Preferences.currency_symbol);
+    currencySymbol =
+        SharedPreferenceHelper.getString(Preferences.currency_symbol);
   }
 
   Future<void> _refreshInsight() async {
@@ -61,7 +62,10 @@ class _InsightScreenState extends State<InsightScreen> {
         centerTitle: true,
         title: Text(
           getTranslated(context, insight)!,
-          style: TextStyle(fontFamily: "ProximaBold", color: Palette.loginhead, fontSize: 18),
+          style: TextStyle(
+              fontFamily: "ProximaBold",
+              color: Palette.loginhead,
+              fontSize: 18),
         ),
       ),
       body: GestureDetector(
@@ -70,12 +74,14 @@ class _InsightScreenState extends State<InsightScreen> {
         },
         child: Container(
           decoration: BoxDecoration(
-              image: DecorationImage(image: AssetImage('assets/images/background.png'))),
+              image: DecorationImage(
+                  image: AssetImage('assets/images/background.png'))),
           child: RefreshIndicator(
             onRefresh: _refreshInsight,
             color: Palette.green,
             child: FutureBuilder<BaseModel<InsightsResponse>>(
-              future: insightFuture!.then((value) => value as BaseModel<InsightsResponse>),
+              future: insightFuture!
+                  .then((value) => value as BaseModel<InsightsResponse>),
               builder: (context, snapshot) {
                 if (snapshot.hasData) {
                   if (snapshot.connectionState != ConnectionState.done) {
@@ -91,11 +97,13 @@ class _InsightScreenState extends State<InsightScreen> {
                       }
                       return SingleChildScrollView(
                         child: Container(
-                          padding: EdgeInsets.only(left: 20, right: 20, top: 10),
+                          padding:
+                              EdgeInsets.only(left: 20, right: 20, top: 10),
                           child: Column(
                             children: [
                               Row(
-                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
                                 children: [
                                   Container(
                                     decoration: BoxDecoration(
@@ -112,9 +120,11 @@ class _InsightScreenState extends State<InsightScreen> {
                                     height: 30.w,
                                     width: 27.w,
                                     child: Padding(
-                                      padding: const EdgeInsets.fromLTRB(15, 15, 0, 0),
+                                      padding: const EdgeInsets.fromLTRB(
+                                          15, 15, 0, 0),
                                       child: Column(
-                                        crossAxisAlignment: CrossAxisAlignment.start,
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.start,
                                         children: [
                                           Text(
                                             getTranslated(context, today)!,
@@ -131,7 +141,10 @@ class _InsightScreenState extends State<InsightScreen> {
                                                 fontSize: 14),
                                           ),
                                           SizedBox(
-                                            height: MediaQuery.of(context).size.height * 0.02,
+                                            height: MediaQuery.of(context)
+                                                    .size
+                                                    .height *
+                                                0.02,
                                           ),
                                           Text(
                                             data.data!.todayOrder.toString(),
@@ -159,9 +172,11 @@ class _InsightScreenState extends State<InsightScreen> {
                                     height: 30.w,
                                     width: 27.w,
                                     child: Padding(
-                                      padding: const EdgeInsets.fromLTRB(15, 15, 0, 0),
+                                      padding: const EdgeInsets.fromLTRB(
+                                          15, 15, 0, 0),
                                       child: Column(
-                                        crossAxisAlignment: CrossAxisAlignment.start,
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.start,
                                         children: [
                                           Text(
                                             getTranslated(context, total)!,
@@ -178,7 +193,10 @@ class _InsightScreenState extends State<InsightScreen> {
                                                 fontSize: 14),
                                           ),
                                           SizedBox(
-                                            height: MediaQuery.of(context).size.height * 0.02,
+                                            height: MediaQuery.of(context)
+                                                    .size
+                                                    .height *
+                                                0.02,
                                           ),
                                           Text(
                                             data.data!.totalOrder.toString(),
@@ -206,9 +224,11 @@ class _InsightScreenState extends State<InsightScreen> {
                                     height: 30.w,
                                     width: 27.w,
                                     child: Padding(
-                                      padding: const EdgeInsets.fromLTRB(15, 15, 0, 0),
+                                      padding: const EdgeInsets.fromLTRB(
+                                          15, 15, 0, 0),
                                       child: Column(
-                                        crossAxisAlignment: CrossAxisAlignment.start,
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.start,
                                         children: [
                                           Text(
                                             getTranslated(context, today)!,
@@ -244,7 +264,8 @@ class _InsightScreenState extends State<InsightScreen> {
                                 height: 20,
                               ),
                               Row(
-                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
                                 children: [
                                   Container(
                                     decoration: BoxDecoration(
@@ -261,9 +282,11 @@ class _InsightScreenState extends State<InsightScreen> {
                                     height: 30.w,
                                     width: 27.w,
                                     child: Padding(
-                                      padding: const EdgeInsets.fromLTRB(15, 15, 0, 0),
+                                      padding: const EdgeInsets.fromLTRB(
+                                          15, 15, 0, 0),
                                       child: Column(
-                                        crossAxisAlignment: CrossAxisAlignment.start,
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.start,
                                         children: [
                                           Text(
                                             getTranslated(context, total)!,
@@ -280,7 +303,10 @@ class _InsightScreenState extends State<InsightScreen> {
                                                 fontSize: 14),
                                           ),
                                           SizedBox(
-                                            height: MediaQuery.of(context).size.height * 0.02,
+                                            height: MediaQuery.of(context)
+                                                    .size
+                                                    .height *
+                                                0.02,
                                           ),
                                           Text(
                                             '$currencySymbol ${data.data!.totalEarnings.toString()}',
@@ -308,9 +334,11 @@ class _InsightScreenState extends State<InsightScreen> {
                                     height: 30.w,
                                     width: 27.w,
                                     child: Padding(
-                                      padding: const EdgeInsets.fromLTRB(15, 15, 0, 0),
+                                      padding: const EdgeInsets.fromLTRB(
+                                          15, 15, 0, 0),
                                       child: Column(
-                                        crossAxisAlignment: CrossAxisAlignment.start,
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.start,
                                         children: [
                                           Text(
                                             getTranslated(context, total)!,
@@ -327,7 +355,10 @@ class _InsightScreenState extends State<InsightScreen> {
                                                 fontSize: 14),
                                           ),
                                           SizedBox(
-                                            height: MediaQuery.of(context).size.height * 0.02,
+                                            height: MediaQuery.of(context)
+                                                    .size
+                                                    .height *
+                                                0.02,
                                           ),
                                           Text(
                                             data.data!.totalMenu.toString(),
@@ -355,9 +386,11 @@ class _InsightScreenState extends State<InsightScreen> {
                                     height: 30.w,
                                     width: 27.w,
                                     child: Padding(
-                                      padding: const EdgeInsets.fromLTRB(15, 15, 0, 0),
+                                      padding: const EdgeInsets.fromLTRB(
+                                          15, 15, 0, 0),
                                       child: Column(
-                                        crossAxisAlignment: CrossAxisAlignment.start,
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.start,
                                         children: [
                                           Text(
                                             getTranslated(context, total)!,
@@ -367,14 +400,18 @@ class _InsightScreenState extends State<InsightScreen> {
                                                 fontSize: 14),
                                           ),
                                           Text(
-                                            getTranslated(context, product_item)!,
+                                            getTranslated(
+                                                context, product_item)!,
                                             style: TextStyle(
                                                 fontFamily: "ProximaNova",
                                                 color: Palette.loginhead,
                                                 fontSize: 13.5),
                                           ),
                                           SizedBox(
-                                            height: MediaQuery.of(context).size.height * 0.02,
+                                            height: MediaQuery.of(context)
+                                                    .size
+                                                    .height *
+                                                0.02,
                                           ),
                                           Text(
                                             data.data!.totalSubmenu.toString(),
@@ -395,12 +432,15 @@ class _InsightScreenState extends State<InsightScreen> {
                               Column(
                                 children: [
                                   Row(
-                                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceBetween,
                                     children: [
                                       Column(
-                                        crossAxisAlignment: CrossAxisAlignment.start,
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.start,
                                         children: [
-                                          Text(getTranslated(context, earnings)!,
+                                          Text(
+                                              getTranslated(context, earnings)!,
                                               style: TextStyle(
                                                   color: Palette.loginhead,
                                                   fontSize: 16,
@@ -445,10 +485,12 @@ class _InsightScreenState extends State<InsightScreen> {
                                     height: 10,
                                   ),
                                   Row(
-                                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceBetween,
                                     children: [
                                       Column(
-                                        crossAxisAlignment: CrossAxisAlignment.start,
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.start,
                                         children: [
                                           Text(getTranslated(context, orders)!,
                                               style: TextStyle(
@@ -502,7 +544,9 @@ class _InsightScreenState extends State<InsightScreen> {
                       );
                     } else {
                       return Center(
-                          child: Container(child: Text(snapshot.data!.error.getErrorMessage())));
+                          child: Container(
+                              child: Text(
+                                  snapshot.data!.error.getErrorMessage())));
                     }
                   }
                 } else {
@@ -527,7 +571,8 @@ showEarningData() {
           ),
           labelStyle: TextStyle(fontWeight: FontWeight.bold)),
       primaryYAxis: NumericAxis(
-          labelFormat: '${SharedPreferenceHelper.getString(Preferences.currency_symbol)}{value}',
+          labelFormat:
+              '${SharedPreferenceHelper.getString(Preferences.currency_symbol)}{value}',
           labelStyle: TextStyle(fontWeight: FontWeight.bold)),
       plotAreaBorderWidth: 0,
       // Enable legend
@@ -536,7 +581,6 @@ showEarningData() {
       tooltipBehavior: TooltipBehavior(
         enable: true,
       ),
-
       series: <ChartSeries<Earning_chart, String>>[
         SplineSeries<Earning_chart, String>(
             color: Palette.loginhead,
@@ -568,7 +612,8 @@ showOrderData() {
           ),
           labelStyle: TextStyle(fontWeight: FontWeight.bold)),
       primaryYAxis: NumericAxis(
-          labelFormat: '${SharedPreferenceHelper.getString(Preferences.currency_symbol)}{value}',
+          labelFormat:
+              '${SharedPreferenceHelper.getString(Preferences.currency_symbol)}{value}',
           labelStyle: TextStyle(fontWeight: FontWeight.bold)),
       plotAreaBorderWidth: 0,
       // Enable legend

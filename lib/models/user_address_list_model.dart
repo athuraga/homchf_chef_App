@@ -1,7 +1,7 @@
-import 'package:mealup_restaurant_side/retrofit/api_client.dart';
-import 'package:mealup_restaurant_side/retrofit/api_header.dart';
-import 'package:mealup_restaurant_side/retrofit/base_model.dart';
-import 'package:mealup_restaurant_side/retrofit/server_error.dart';
+import 'package:homchf_chef_side/retrofit/api_client.dart';
+import 'package:homchf_chef_side/retrofit/api_header.dart';
+import 'package:homchf_chef_side/retrofit/base_model.dart';
+import 'package:homchf_chef_side/retrofit/server_error.dart';
 
 Future<BaseModel<UserAddressList>> getUserAddressList() async {
   UserAddressList response;

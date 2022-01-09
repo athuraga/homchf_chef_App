@@ -1,9 +1,9 @@
-import 'package:mealup_restaurant_side/models/user.dart';
-import 'package:mealup_restaurant_side/retrofit/api_client.dart';
-import 'package:mealup_restaurant_side/retrofit/api_header.dart';
-import 'package:mealup_restaurant_side/retrofit/base_model.dart';
-import 'package:mealup_restaurant_side/retrofit/server_error.dart';
-import 'package:mealup_restaurant_side/utilities/device_utils.dart';
+import 'package:homchf_chef_side/models/user.dart';
+import 'package:homchf_chef_side/retrofit/api_client.dart';
+import 'package:homchf_chef_side/retrofit/api_header.dart';
+import 'package:homchf_chef_side/retrofit/base_model.dart';
+import 'package:homchf_chef_side/retrofit/server_error.dart';
+import 'package:homchf_chef_side/utilities/device_utils.dart';
 
 /// success : true
 /// data : "Menu Cretaed successfully...!!"
@@ -28,10 +28,10 @@ Future<BaseModel<CommonResponse>> addProduct(Map<String, String?> param) async {
     return BaseModel()..setException(ServerError.withError(error: error));
   }
   return BaseModel()..data = response;
-
 }
 
-Future<BaseModel<CommonResponse>> changeOrderStatus(Map<String, String?> param) async {
+Future<BaseModel<CommonResponse>> changeOrderStatus(
+    Map<String, String?> param) async {
   CommonResponse response;
   try {
     response = await ApiClient(ApiHeader().dioData()).changeStatus(param);
@@ -43,10 +43,13 @@ Future<BaseModel<CommonResponse>> changeOrderStatus(Map<String, String?> param) 
   return BaseModel()..data = response;
 }
 
-Future<BaseModel<CommonResponse>> updateSubmenu( int? id,Map<String, String?> param,) async {
+Future<BaseModel<CommonResponse>> updateSubmenu(
+  int? id,
+  Map<String, String?> param,
+) async {
   CommonResponse response;
   try {
-    response = await ApiClient(ApiHeader().dioData()).updateSubmenu(id,param);
+    response = await ApiClient(ApiHeader().dioData()).updateSubmenu(id, param);
     DeviceUtils.toastMessage(response.data.toString());
   } catch (error, stacktrace) {
     print("Exception occurred: $error stackTrace: $stacktrace");
@@ -55,7 +58,8 @@ Future<BaseModel<CommonResponse>> updateSubmenu( int? id,Map<String, String?> pa
   return BaseModel()..data = response;
 }
 
-Future<BaseModel<CommonResponse>> updateProfileVendor(Map<String, String> param) async {
+Future<BaseModel<CommonResponse>> updateProfileVendor(
+    Map<String, String> param) async {
   CommonResponse response;
   try {
     response = await ApiClient(ApiHeader().dioData()).updateProfile(param);
@@ -67,7 +71,8 @@ Future<BaseModel<CommonResponse>> updateProfileVendor(Map<String, String> param)
   return BaseModel()..data = response;
 }
 
-Future<BaseModel<CommonResponse>> changePassword(Map<String, String> param) async {
+Future<BaseModel<CommonResponse>> changePassword(
+    Map<String, String> param) async {
   CommonResponse response;
   try {
     response = await ApiClient(ApiHeader().dioData()).changePassword(param);
@@ -91,7 +96,6 @@ Future<BaseModel<User>> checkOTP(Map<String, String> param) async {
   return BaseModel()..data = response;
 }
 
-
 Future<BaseModel<User>> resendOTP(Map<String, String> param) async {
   User response;
   try {
@@ -111,10 +115,10 @@ class CommonResponse {
   bool? get success => _success;
   String? get data => _data;
 
-  CommonResponse({bool? success, String? data}){
+  CommonResponse({bool? success, String? data}) {
     _success = success;
     _data = data;
-}
+  }
 
   CommonResponse.fromJson(dynamic json) {
     _success = json["success"];
@@ -127,6 +131,4 @@ class CommonResponse {
     map["data"] = _data;
     return map;
   }
-
 }
-

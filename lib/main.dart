@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
-import 'package:mealup_restaurant_side/routes/custome_router.dart';
-import 'package:mealup_restaurant_side/routes/route_names.dart';
-import 'package:mealup_restaurant_side/utilities/prefConstatnt.dart';
-import 'package:mealup_restaurant_side/utilities/preference.dart';
+import 'package:homchf_chef_side/routes/custome_router.dart';
+import 'package:homchf_chef_side/routes/route_names.dart';
+import 'package:homchf_chef_side/utilities/prefConstatnt.dart';
+import 'package:homchf_chef_side/utilities/preference.dart';
 import 'package:sizer/sizer.dart';
 
 import 'localization/lang_localizations.dart';
@@ -88,7 +88,8 @@ class _MyAppState extends State<MyApp> {
             },
             debugShowCheckedModeBanner: false,
             initialRoute:
-                SharedPreferenceHelper.getBoolean(Preferences.is_logged_in) == true
+                SharedPreferenceHelper.getBoolean(Preferences.is_logged_in) ==
+                        true
                     ? homeRoute
                     : loginRoute,
             onGenerateRoute: CustomRouter.allRoutes,

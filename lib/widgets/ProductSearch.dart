@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:mealup_restaurant_side/config/Palette.dart';
+import 'package:homchf_chef_side/config/Palette.dart';
 
 class ProductSearch extends StatefulWidget {
   @override
@@ -175,7 +175,6 @@ class _ProductSearchState extends State<ProductSearch> {
                           )
                         ],
                       ),
-
                     ],
                   ),
                 )

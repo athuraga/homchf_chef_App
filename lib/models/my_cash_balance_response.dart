@@ -1,7 +1,7 @@
-import 'package:mealup_restaurant_side/retrofit/api_client.dart';
-import 'package:mealup_restaurant_side/retrofit/api_header.dart';
-import 'package:mealup_restaurant_side/retrofit/base_model.dart';
-import 'package:mealup_restaurant_side/retrofit/server_error.dart';
+import 'package:homchf_chef_side/retrofit/api_client.dart';
+import 'package:homchf_chef_side/retrofit/api_header.dart';
+import 'package:homchf_chef_side/retrofit/base_model.dart';
+import 'package:homchf_chef_side/retrofit/server_error.dart';
 
 Future<BaseModel<MyCashBalanceResponse>> getCashBalance() async {
   MyCashBalanceResponse response;
@@ -14,7 +14,6 @@ Future<BaseModel<MyCashBalanceResponse>> getCashBalance() async {
   return BaseModel()..data = response;
 }
 
-
 class MyCashBalanceResponse {
   bool? _success;
   Data? _data;
@@ -22,12 +21,10 @@ class MyCashBalanceResponse {
   bool? get success => _success;
   Data? get data => _data;
 
-  MyCashBalanceResponse({
-      bool? success, 
-      Data? data}){
+  MyCashBalanceResponse({bool? success, Data? data}) {
     _success = success;
     _data = data;
-}
+  }
 
   MyCashBalanceResponse.fromJson(dynamic json) {
     _success = json["success"];
@@ -42,10 +39,7 @@ class MyCashBalanceResponse {
     }
     return map;
   }
-
 }
-
-
 
 class Data {
   List<Balance>? _balance;
@@ -54,9 +48,7 @@ class Data {
   List<Balance>? get balance => _balance;
   int? get totalBalance => _totalBalance;
 
-  Data({
-    List<Balance>? balance,
-    int? totalBalance}){
+  Data({List<Balance>? balance, int? totalBalance}) {
     _balance = balance;
     _totalBalance = totalBalance;
   }
@@ -79,7 +71,6 @@ class Data {
     map["total_balance"] = _totalBalance;
     return map;
   }
-
 }
 
 class Balance {
@@ -93,11 +84,7 @@ class Balance {
   String? get date => _date;
   String? get name => _name;
 
-  Balance({
-    String? orderId,
-    int? amount,
-    String? date,
-    String? name}){
+  Balance({String? orderId, int? amount, String? date, String? name}) {
     _orderId = orderId;
     _amount = amount;
     _date = date;
@@ -119,5 +106,4 @@ class Balance {
     map["name"] = _name;
     return map;
   }
-
 }

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/android.iml" filepath="$PROJECT_DIR$/.idea/modules/android.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/android.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/android.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/680764608/android.connectivity.iml" filepath="$PROJECT_DIR$/.idea/modules/680764608/android.connectivity.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/1691658965/android.flutter_plugin_android_lifecycle.iml" filepath="$PROJECT_DIR$/.idea/modules/1691658965/android.flutter_plugin_android_lifecycle.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-1916107237/android.fluttertoast.iml" filepath="$PROJECT_DIR$/.idea/modules/-1916107237/android.fluttertoast.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-1380877397/android.geocoding.iml" filepath="$PROJECT_DIR$/.idea/modules/-1380877397/android.geocoding.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-1129717482/android.geolocator_android.iml" filepath="$PROJECT_DIR$/.idea/modules/-1129717482/android.geolocator_android.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/961066853/android.image_picker.iml" filepath="$PROJECT_DIR$/.idea/modules/961066853/android.image_picker.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/1111573608/android.modal_progress_hud_nsn.iml" filepath="$PROJECT_DIR$/.idea/modules/1111573608/android.modal_progress_hud_nsn.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-142159073/android.onesignal_flutter.iml" filepath="$PROJECT_DIR$/.idea/modules/-142159073/android.onesignal_flutter.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/1681755815/android.shared_preferences.iml" filepath="$PROJECT_DIR$/.idea/modules/1681755815/android.shared_preferences.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-96859073/android.url_launcher.iml" filepath="$PROJECT_DIR$/.idea/modules/-96859073/android.url_launcher.iml" />
+    </modules>
+  </component>
+</project>

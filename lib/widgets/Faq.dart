@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:mealup_restaurant_side/config/Palette.dart';
+import 'package:homchf_chef_side/config/Palette.dart';
 
 class Faq extends StatefulWidget {
   @override
@@ -21,7 +21,7 @@ class _FaqState extends State<Faq> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Padding(
-                  padding: const EdgeInsets.fromLTRB(5,0,5,0),
+                  padding: const EdgeInsets.fromLTRB(5, 0, 5, 0),
                   child: ExpansionTile(
                     title: Row(
                       children: [
@@ -43,17 +43,25 @@ class _FaqState extends State<Faq> {
                     ),
                     children: [
                       Padding(
-                        padding: const EdgeInsets.fromLTRB(30,0,30,10),
+                        padding: const EdgeInsets.fromLTRB(30, 0, 30, 10),
                         child: Text(
                             "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum"),
                       ),
                     ],
                   ),
                 ),
-                SizedBox(height: MediaQuery.of(context).size.height*0.01,),
-                Divider(height: 1,thickness: 1,indent: 15,endIndent: 25,color: Palette.profliedivider,),
+                SizedBox(
+                  height: MediaQuery.of(context).size.height * 0.01,
+                ),
+                Divider(
+                  height: 1,
+                  thickness: 1,
+                  indent: 15,
+                  endIndent: 25,
+                  color: Palette.profliedivider,
+                ),
                 Padding(
-                  padding: const EdgeInsets.fromLTRB(5,0,5,0),
+                  padding: const EdgeInsets.fromLTRB(5, 0, 5, 0),
                   child: ExpansionTile(
                     title: Row(
                       children: [
@@ -75,17 +83,25 @@ class _FaqState extends State<Faq> {
                     ),
                     children: [
                       Padding(
-                        padding: const EdgeInsets.fromLTRB(30,0,30,10),
+                        padding: const EdgeInsets.fromLTRB(30, 0, 30, 10),
                         child: Text(
                             "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum"),
                       ),
                     ],
                   ),
                 ),
-                SizedBox(height: MediaQuery.of(context).size.height*0.01,),
-                Divider(height: 1,thickness: 1,indent: 15,endIndent: 25,color: Palette.profliedivider,),
+                SizedBox(
+                  height: MediaQuery.of(context).size.height * 0.01,
+                ),
+                Divider(
+                  height: 1,
+                  thickness: 1,
+                  indent: 15,
+                  endIndent: 25,
+                  color: Palette.profliedivider,
+                ),
                 Padding(
-                  padding: const EdgeInsets.fromLTRB(5,0,5,0),
+                  padding: const EdgeInsets.fromLTRB(5, 0, 5, 0),
                   child: ExpansionTile(
                     title: Row(
                       children: [
@@ -107,17 +123,25 @@ class _FaqState extends State<Faq> {
                     ),
                     children: [
                       Padding(
-                        padding: const EdgeInsets.fromLTRB(30,0,30,10),
+                        padding: const EdgeInsets.fromLTRB(30, 0, 30, 10),
                         child: Text(
                             "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum"),
                       ),
                     ],
                   ),
                 ),
-                SizedBox(height: MediaQuery.of(context).size.height*0.01,),
-                Divider(height: 1,thickness: 1,indent: 15,endIndent: 25,color: Palette.profliedivider,),
+                SizedBox(
+                  height: MediaQuery.of(context).size.height * 0.01,
+                ),
+                Divider(
+                  height: 1,
+                  thickness: 1,
+                  indent: 15,
+                  endIndent: 25,
+                  color: Palette.profliedivider,
+                ),
                 Padding(
-                  padding: const EdgeInsets.fromLTRB(5,0,5,0),
+                  padding: const EdgeInsets.fromLTRB(5, 0, 5, 0),
                   child: ExpansionTile(
                     title: Row(
                       children: [
@@ -140,22 +164,30 @@ class _FaqState extends State<Faq> {
                     // trailing: Icon(Icons.keyboard_arrow_down_outlined),
                     children: [
                       Padding(
-                        padding: const EdgeInsets.fromLTRB(30,0,30,0),
+                        padding: const EdgeInsets.fromLTRB(30, 0, 30, 0),
                         child: Text(
                             "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum"),
                       ),
                     ],
                   ),
                 ),
-                SizedBox(height: MediaQuery.of(context).size.height*0.01,),
-                Divider(height: 1,thickness: 1,indent: 15,endIndent: 25,color: Palette.profliedivider,),
+                SizedBox(
+                  height: MediaQuery.of(context).size.height * 0.01,
+                ),
+                Divider(
+                  height: 1,
+                  thickness: 1,
+                  indent: 15,
+                  endIndent: 25,
+                  color: Palette.profliedivider,
+                ),
                 Padding(
-                  padding: const EdgeInsets.fromLTRB(5,0,5,0),
+                  padding: const EdgeInsets.fromLTRB(5, 0, 5, 0),
                   child: ExpansionTile(
                     title: Row(
                       children: [
                         Padding(
-                          padding: const EdgeInsets.only(bottom:0),
+                          padding: const EdgeInsets.only(bottom: 0),
                           child: Text(
                             "5. ",
                             style: TextStyle(
@@ -175,22 +207,30 @@ class _FaqState extends State<Faq> {
                     ),
                     children: [
                       Padding(
-                        padding: const EdgeInsets.fromLTRB(30,0,30,10),
+                        padding: const EdgeInsets.fromLTRB(30, 0, 30, 10),
                         child: Text(
                             "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum"),
                       ),
                     ],
                   ),
                 ),
-                SizedBox(height: MediaQuery.of(context).size.height*0.01,),
-                Divider(height: 1,thickness: 1,indent: 15,endIndent: 25,color: Palette.profliedivider,),
+                SizedBox(
+                  height: MediaQuery.of(context).size.height * 0.01,
+                ),
+                Divider(
+                  height: 1,
+                  thickness: 1,
+                  indent: 15,
+                  endIndent: 25,
+                  color: Palette.profliedivider,
+                ),
                 Padding(
-                  padding: const EdgeInsets.fromLTRB(5,0,5,0),
+                  padding: const EdgeInsets.fromLTRB(5, 0, 5, 0),
                   child: ExpansionTile(
                     title: Row(
                       children: [
                         Padding(
-                          padding: const EdgeInsets.only(bottom:0),
+                          padding: const EdgeInsets.only(bottom: 0),
                           child: Text(
                             "6. ",
                             style: TextStyle(
@@ -210,22 +250,30 @@ class _FaqState extends State<Faq> {
                     ),
                     children: [
                       Padding(
-                        padding: const EdgeInsets.fromLTRB(30,0,30,10),
+                        padding: const EdgeInsets.fromLTRB(30, 0, 30, 10),
                         child: Text(
                             "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum"),
                       ),
                     ],
                   ),
                 ),
-                SizedBox(height: MediaQuery.of(context).size.height*0.01,),
-                Divider(height: 1,thickness: 1,indent: 15,endIndent: 25,color: Palette.profliedivider,),
+                SizedBox(
+                  height: MediaQuery.of(context).size.height * 0.01,
+                ),
+                Divider(
+                  height: 1,
+                  thickness: 1,
+                  indent: 15,
+                  endIndent: 25,
+                  color: Palette.profliedivider,
+                ),
                 Padding(
-                  padding: const EdgeInsets.fromLTRB(5,0,5,0),
+                  padding: const EdgeInsets.fromLTRB(5, 0, 5, 0),
                   child: ExpansionTile(
                     title: Row(
                       children: [
                         Padding(
-                          padding: const EdgeInsets.only(bottom:0),
+                          padding: const EdgeInsets.only(bottom: 0),
                           child: Text(
                             "7. ",
                             style: TextStyle(
@@ -245,21 +293,27 @@ class _FaqState extends State<Faq> {
                     ),
                     children: [
                       Padding(
-                        padding: const EdgeInsets.fromLTRB(30,0,30,10),
+                        padding: const EdgeInsets.fromLTRB(30, 0, 30, 10),
                         child: Text(
                             "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum"),
                       ),
                     ],
                   ),
                 ),
-                Divider(height: 1,thickness: 1,indent: 15,endIndent: 25,color: Palette.profliedivider,),
+                Divider(
+                  height: 1,
+                  thickness: 1,
+                  indent: 15,
+                  endIndent: 25,
+                  color: Palette.profliedivider,
+                ),
                 Padding(
-                  padding: const EdgeInsets.fromLTRB(5,0,5,0),
+                  padding: const EdgeInsets.fromLTRB(5, 0, 5, 0),
                   child: ExpansionTile(
                     title: Row(
                       children: [
                         Padding(
-                          padding: const EdgeInsets.only(bottom:0),
+                          padding: const EdgeInsets.only(bottom: 0),
                           child: Text(
                             "8. ",
                             style: TextStyle(
@@ -279,21 +333,27 @@ class _FaqState extends State<Faq> {
                     ),
                     children: [
                       Padding(
-                        padding: const EdgeInsets.fromLTRB(30,0,30,10),
+                        padding: const EdgeInsets.fromLTRB(30, 0, 30, 10),
                         child: Text(
                             "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum"),
                       ),
                     ],
                   ),
                 ),
-                Divider(height: 1,thickness: 1,indent: 15,endIndent: 25,color: Palette.profliedivider,),
+                Divider(
+                  height: 1,
+                  thickness: 1,
+                  indent: 15,
+                  endIndent: 25,
+                  color: Palette.profliedivider,
+                ),
                 Padding(
-                  padding: const EdgeInsets.fromLTRB(5,0,5,0),
+                  padding: const EdgeInsets.fromLTRB(5, 0, 5, 0),
                   child: ExpansionTile(
                     title: Row(
                       children: [
                         Padding(
-                          padding: const EdgeInsets.only(bottom:0),
+                          padding: const EdgeInsets.only(bottom: 0),
                           child: Text(
                             "9. ",
                             style: TextStyle(
@@ -313,14 +373,13 @@ class _FaqState extends State<Faq> {
                     ),
                     children: [
                       Padding(
-                        padding: const EdgeInsets.fromLTRB(30,0,30,10),
+                        padding: const EdgeInsets.fromLTRB(30, 0, 30, 10),
                         child: Text(
                             "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum"),
                       ),
                     ],
                   ),
                 ),
-
               ],
             )
           ],

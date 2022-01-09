@@ -4,16 +4,16 @@ import 'package:dotted_line/dotted_line.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:mealup_restaurant_side/config/Palette.dart';
-import 'package:mealup_restaurant_side/constant/app_strings.dart';
-import 'package:mealup_restaurant_side/localization/localization_constant.dart';
-import 'package:mealup_restaurant_side/models/common_response.dart';
-import 'package:mealup_restaurant_side/models/orders_response.dart';
-import 'package:mealup_restaurant_side/retrofit/base_model.dart';
-import 'package:mealup_restaurant_side/screens/orders/OrderDetailScreen.dart';
-import 'package:mealup_restaurant_side/utilities/device_utils.dart';
-import 'package:mealup_restaurant_side/utilities/prefConstatnt.dart';
-import 'package:mealup_restaurant_side/utilities/preference.dart';
+import 'package:homchf_chef_side/config/Palette.dart';
+import 'package:homchf_chef_side/constant/app_strings.dart';
+import 'package:homchf_chef_side/localization/localization_constant.dart';
+import 'package:homchf_chef_side/models/common_response.dart';
+import 'package:homchf_chef_side/models/orders_response.dart';
+import 'package:homchf_chef_side/retrofit/base_model.dart';
+import 'package:homchf_chef_side/screens/orders/OrderDetailScreen.dart';
+import 'package:homchf_chef_side/utilities/device_utils.dart';
+import 'package:homchf_chef_side/utilities/prefConstatnt.dart';
+import 'package:homchf_chef_side/utilities/preference.dart';
 import 'package:sizer/sizer.dart';
 
 Future<BaseModel<OrdersResponse>>? getOrderFuture;
@@ -707,7 +707,7 @@ class _HomeScreenState extends State<HomeScreen>
                                                         reverseorderListPast[
                                                                 index]
                                                             .orderSchedule!,
-                                                        maxLines: 2,
+                                                        maxLines: 4,
                                                         style: TextStyle(
                                                             color: Palette
                                                                 .loginhead,

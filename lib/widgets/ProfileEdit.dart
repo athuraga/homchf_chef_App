@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:mealup_restaurant_side/config/Palette.dart';
+import 'package:homchf_chef_side/config/Palette.dart';
 
 class ProfileEdit extends StatefulWidget {
   @override
@@ -14,7 +14,8 @@ class _ProfileEditState extends State<ProfileEdit> {
     return Scaffold(
       body: Container(
         decoration: BoxDecoration(
-            image: DecorationImage(image: AssetImage('assets/images/loginn.png'))),
+            image:
+                DecorationImage(image: AssetImage('assets/images/loginn.png'))),
         child: ListView(
           children: [
             Column(
@@ -63,12 +64,11 @@ class _ProfileEditState extends State<ProfileEdit> {
                               ],
                             ),
                             SizedBox(
-                              height:
-                              MediaQuery.of(context).size.height * 0.01,
+                              height: MediaQuery.of(context).size.height * 0.01,
                             ),
                             Container(
-                              height: MediaQuery.of(context).size.height*0.01,
-                              width: MediaQuery.of(context).size.width*0.6,
+                              height: MediaQuery.of(context).size.height * 0.01,
+                              width: MediaQuery.of(context).size.width * 0.6,
                               child: Divider(
                                 color: Palette.profliedivider,
                                 thickness: 1,
@@ -77,8 +77,7 @@ class _ProfileEditState extends State<ProfileEdit> {
                               ),
                             ),
                             SizedBox(
-                              height:
-                              MediaQuery.of(context).size.height * 0.01,
+                              height: MediaQuery.of(context).size.height * 0.01,
                             ),
                             Row(
                               children: [
@@ -111,8 +110,7 @@ class _ProfileEditState extends State<ProfileEdit> {
                   ),
                 ),
                 SizedBox(
-                  height:
-                  MediaQuery.of(context).size.height * 0.04,
+                  height: MediaQuery.of(context).size.height * 0.04,
                 ),
                 Padding(
                   padding: const EdgeInsets.fromLTRB(50, 0, 0, 0),
@@ -152,14 +150,13 @@ class _ProfileEditState extends State<ProfileEdit> {
                     ),
                   ),
                 ),
-
                 SizedBox(
-                  height:
-                  MediaQuery.of(context).size.height * 0.04,
+                  height: MediaQuery.of(context).size.height * 0.04,
                 ),
                 Padding(
                   padding: const EdgeInsets.fromLTRB(50, 0, 20, 0),
-                  child: Row(mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Text(
                         "Email",
@@ -170,7 +167,11 @@ class _ProfileEditState extends State<ProfileEdit> {
                       ),
                       Row(
                         children: [
-                          Icon(Icons.info,color: Palette.removeacct,size: 20,),
+                          Icon(
+                            Icons.info,
+                            color: Palette.removeacct,
+                            size: 20,
+                          ),
                           Text(
                             " Not Verified",
                             style: TextStyle(
@@ -211,10 +212,8 @@ class _ProfileEditState extends State<ProfileEdit> {
                     ),
                   ),
                 ),
-
                 SizedBox(
-                  height:
-                  MediaQuery.of(context).size.height * 0.04,
+                  height: MediaQuery.of(context).size.height * 0.04,
                 ),
                 Padding(
                   padding: const EdgeInsets.fromLTRB(50, 0, 0, 0),
@@ -227,8 +226,7 @@ class _ProfileEditState extends State<ProfileEdit> {
                   ),
                 ),
                 SizedBox(
-                  height:
-                  MediaQuery.of(context).size.height * 0.015,
+                  height: MediaQuery.of(context).size.height * 0.015,
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -243,11 +241,9 @@ class _ProfileEditState extends State<ProfileEdit> {
                         height: MediaQuery.of(context).size.height * 0.08,
                         width: MediaQuery.of(context).size.width * 0.26,
                         child: Padding(
-                          padding:
-                          const EdgeInsets.fromLTRB(20, 0, 20, 0),
+                          padding: const EdgeInsets.fromLTRB(20, 0, 20, 0),
                           child: Row(
-                            mainAxisAlignment:
-                            MainAxisAlignment.spaceBetween,
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
                               Container(
                                 child: CircleAvatar(
@@ -260,7 +256,11 @@ class _ProfileEditState extends State<ProfileEdit> {
                                   ),
                                 ),
                               ),
-                              Icon(Icons.keyboard_arrow_down_outlined,color: Palette.loginhead,size: 25,)
+                              Icon(
+                                Icons.keyboard_arrow_down_outlined,
+                                color: Palette.loginhead,
+                                size: 25,
+                              )
                             ],
                           ),
                         ),
@@ -276,8 +276,7 @@ class _ProfileEditState extends State<ProfileEdit> {
                         height: MediaQuery.of(context).size.height * 0.08,
                         width: MediaQuery.of(context).size.width * 0.60,
                         child: Row(
-                          mainAxisAlignment:
-                          MainAxisAlignment.spaceEvenly,
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: [
                             Text(
                               '+1',
@@ -292,16 +291,13 @@ class _ProfileEditState extends State<ProfileEdit> {
                               color: Palette.switchs,
                             ),
                             Container(
-                              height: MediaQuery.of(context).size.height *
-                                  0.05,
-                              width:
-                              MediaQuery.of(context).size.width * 0.3,
+                              height: MediaQuery.of(context).size.height * 0.05,
+                              width: MediaQuery.of(context).size.width * 0.3,
                               child: TextField(
                                 decoration: InputDecoration(
                                     hintText: "000 000 0000",
                                     hintStyle: TextStyle(
-                                        color: Palette.switchs,
-                                        fontSize: 14),
+                                        color: Palette.switchs, fontSize: 14),
                                     border: InputBorder.none),
                                 style: TextStyle(
                                     color: Colors.black, fontSize: 14),

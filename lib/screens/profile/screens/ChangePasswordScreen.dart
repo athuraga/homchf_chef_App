@@ -3,11 +3,11 @@ import 'dart:collection';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:mealup_restaurant_side/config/Palette.dart';
-import 'package:mealup_restaurant_side/constant/app_strings.dart';
-import 'package:mealup_restaurant_side/localization/localization_constant.dart';
-import 'package:mealup_restaurant_side/models/common_response.dart';
-import 'package:mealup_restaurant_side/utilities/device_utils.dart';
+import 'package:homchf_chef_side/config/Palette.dart';
+import 'package:homchf_chef_side/constant/app_strings.dart';
+import 'package:homchf_chef_side/localization/localization_constant.dart';
+import 'package:homchf_chef_side/models/common_response.dart';
+import 'package:homchf_chef_side/utilities/device_utils.dart';
 
 // ignore: must_be_immutable
 class ChangePasswordScreen extends StatefulWidget {
@@ -100,10 +100,10 @@ class _ChangePasswordScreenState extends State<ChangePasswordScreen> {
                                 color: Palette.white,
                                 boxShadow: [
                                   BoxShadow(
-                                      color: Colors.grey.withOpacity(0.5),
-                                      spreadRadius: 2,
-                                      blurRadius: 3,
-                                      offset: Offset(0, 3),
+                                    color: Colors.grey.withOpacity(0.5),
+                                    spreadRadius: 2,
+                                    blurRadius: 3,
+                                    offset: Offset(0, 3),
                                   ),
                                 ],
                                 borderRadius: BorderRadius.circular(20),
@@ -200,10 +200,12 @@ class _ChangePasswordScreenState extends State<ChangePasswordScreen> {
                               decoration: BoxDecoration(
                                 color: Palette.white,
                                 boxShadow: [
-                                  BoxShadow(color: Colors.grey.withOpacity(0.5),
+                                  BoxShadow(
+                                    color: Colors.grey.withOpacity(0.5),
                                     spreadRadius: 2,
                                     blurRadius: 3,
-                                    offset: Offset(0, 3),),
+                                    offset: Offset(0, 3),
+                                  ),
                                 ],
                                 borderRadius: BorderRadius.circular(20),
                               ),
@@ -279,7 +281,8 @@ class _ChangePasswordScreenState extends State<ChangePasswordScreen> {
                     children: [
                       Padding(
                         padding: const EdgeInsets.fromLTRB(30, 0, 0, 0),
-                        child: Text(getTranslated(context, confirm_new_password)!,
+                        child: Text(
+                          getTranslated(context, confirm_new_password)!,
                           style: TextStyle(
                               color: Palette.loginhead,
                               fontSize: 16,
@@ -298,10 +301,12 @@ class _ChangePasswordScreenState extends State<ChangePasswordScreen> {
                               decoration: BoxDecoration(
                                 color: Palette.white,
                                 boxShadow: [
-                                  BoxShadow(color: Colors.grey.withOpacity(0.5),
+                                  BoxShadow(
+                                    color: Colors.grey.withOpacity(0.5),
                                     spreadRadius: 2,
                                     blurRadius: 3,
-                                    offset: Offset(0, 3),),
+                                    offset: Offset(0, 3),
+                                  ),
                                 ],
                                 borderRadius: BorderRadius.circular(20),
                               ),

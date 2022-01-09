@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:mealup_restaurant_side/config/Palette.dart';
-import 'package:mealup_restaurant_side/constant/app_strings.dart';
+import 'package:homchf_chef_side/config/Palette.dart';
+import 'package:homchf_chef_side/constant/app_strings.dart';
 
 class CustomTabView extends StatefulWidget {
   final int itemCount;
@@ -109,7 +109,8 @@ class _CustomTabsState extends State<CustomTabView>
             labelStyle: TextStyle(fontFamily: proxima_nova_bold, fontSize: 18),
             labelColor: Palette.loginhead,
             unselectedLabelColor: Palette.loginhead,
-            unselectedLabelStyle: TextStyle(fontFamily: proxima_nova_reg,fontSize: 16),
+            unselectedLabelStyle:
+                TextStyle(fontFamily: proxima_nova_reg, fontSize: 16),
             indicator: BoxDecoration(
               border: Border(
                 bottom: BorderSide(

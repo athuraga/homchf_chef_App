@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:mealup_restaurant_side/config/Palette.dart';
+import 'package:homchf_chef_side/config/Palette.dart';
 
 class Terms extends StatefulWidget {
   @override
@@ -14,7 +14,7 @@ class _TermsState extends State<Terms> {
       body: Container(
         decoration: BoxDecoration(
             image:
-            DecorationImage(image: AssetImage('assets/images/loginn.png'))),
+                DecorationImage(image: AssetImage('assets/images/loginn.png'))),
         child: ListView(
           children: [
             Column(

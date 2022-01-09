@@ -1,8 +1,7 @@
-
-import 'package:mealup_restaurant_side/retrofit/api_client.dart';
-import 'package:mealup_restaurant_side/retrofit/api_header.dart';
-import 'package:mealup_restaurant_side/retrofit/base_model.dart';
-import 'package:mealup_restaurant_side/retrofit/server_error.dart';
+import 'package:homchf_chef_side/retrofit/api_client.dart';
+import 'package:homchf_chef_side/retrofit/api_header.dart';
+import 'package:homchf_chef_side/retrofit/base_model.dart';
+import 'package:homchf_chef_side/retrofit/server_error.dart';
 
 Future<BaseModel<VendorSettingResponse>> getVendorDetail() async {
   VendorSettingResponse response;
@@ -13,10 +12,7 @@ Future<BaseModel<VendorSettingResponse>> getVendorDetail() async {
     return BaseModel()..setException(ServerError.withError(error: error));
   }
   return BaseModel()..data = response;
-
 }
-
-
 
 class VendorSettingResponse {
   bool? _success;
@@ -25,12 +21,10 @@ class VendorSettingResponse {
   bool? get success => _success;
   Data? get data => _data;
 
-  VendorSettingResponse({
-      bool? success, 
-      Data? data}){
+  VendorSettingResponse({bool? success, Data? data}) {
     _success = success;
     _data = data;
-}
+  }
 
   VendorSettingResponse.fromJson(dynamic json) {
     _success = json["success"];
@@ -45,7 +39,6 @@ class VendorSettingResponse {
     }
     return map;
   }
-
 }
 
 class Data {
@@ -61,18 +54,18 @@ class Data {
   String? get currency => _currency;
   String? get currencySymbol => _currencySymbol;
 
-  Data({
-      String? vendorAppId, 
-      String? vendorAuthKey, 
-      String? vendorApiKey, 
-      String? currency, 
-      String? currencySymbol}){
+  Data(
+      {String? vendorAppId,
+      String? vendorAuthKey,
+      String? vendorApiKey,
+      String? currency,
+      String? currencySymbol}) {
     _vendorAppId = vendorAppId;
     _vendorAuthKey = vendorAuthKey;
     _vendorApiKey = vendorApiKey;
     _currency = currency;
     _currencySymbol = currencySymbol;
-}
+  }
 
   Data.fromJson(dynamic json) {
     _vendorAppId = json["vendor_app_id"];
@@ -91,5 +84,4 @@ class Data {
     map["currency_symbol"] = _currencySymbol;
     return map;
   }
-
 }

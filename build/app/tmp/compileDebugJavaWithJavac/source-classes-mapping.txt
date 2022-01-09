@@ -1,4 +1,0 @@
-io/flutter/plugins/GeneratedPluginRegistrant.java
- io.flutter.plugins.GeneratedPluginRegistrant
-app/saasmonks/mealup/vendor/BuildConfig.java
- app.saasmonks.mealup.vendor.BuildConfig

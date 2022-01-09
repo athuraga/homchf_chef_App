@@ -5,17 +5,17 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
-import 'package:mealup_restaurant_side/config/Palette.dart';
-import 'package:mealup_restaurant_side/constant/app_strings.dart';
-import 'package:mealup_restaurant_side/localization/localization_constant.dart';
-import 'package:mealup_restaurant_side/models/user.dart';
-import 'package:mealup_restaurant_side/retrofit/api_client.dart';
-import 'package:mealup_restaurant_side/retrofit/api_header.dart';
-import 'package:mealup_restaurant_side/retrofit/base_model.dart';
-import 'package:mealup_restaurant_side/retrofit/server_error.dart';
-import 'package:mealup_restaurant_side/screens/auth/LoginScreen.dart';
-import 'package:mealup_restaurant_side/screens/auth/OtpScreen.dart';
-import 'package:mealup_restaurant_side/utilities/device_utils.dart';
+import 'package:homchf_chef_side/config/Palette.dart';
+import 'package:homchf_chef_side/constant/app_strings.dart';
+import 'package:homchf_chef_side/localization/localization_constant.dart';
+import 'package:homchf_chef_side/models/user.dart';
+import 'package:homchf_chef_side/retrofit/api_client.dart';
+import 'package:homchf_chef_side/retrofit/api_header.dart';
+import 'package:homchf_chef_side/retrofit/base_model.dart';
+import 'package:homchf_chef_side/retrofit/server_error.dart';
+import 'package:homchf_chef_side/screens/auth/LoginScreen.dart';
+import 'package:homchf_chef_side/screens/auth/OtpScreen.dart';
+import 'package:homchf_chef_side/utilities/device_utils.dart';
 import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
 
 class RegisterScreen extends StatefulWidget {
@@ -70,7 +70,8 @@ class _RegisterScreenState extends State<RegisterScreen> {
                       padding: EdgeInsets.only(top: 50, bottom: 20),
                       child: Image.asset(
                         'assets/images/logo.png',
-                        height: 60,width: width,
+                        height: 60,
+                        width: width,
                       )),
                 ),
                 Column(
@@ -98,10 +99,12 @@ class _RegisterScreenState extends State<RegisterScreen> {
                             decoration: BoxDecoration(
                               color: Palette.white,
                               boxShadow: [
-                                BoxShadow(color: Colors.grey.withOpacity(0.5),
+                                BoxShadow(
+                                  color: Colors.grey.withOpacity(0.5),
                                   spreadRadius: 2,
                                   blurRadius: 3,
-                                  offset: Offset(0, 3),),
+                                  offset: Offset(0, 3),
+                                ),
                               ],
                               borderRadius: BorderRadius.circular(20),
                             ),
@@ -121,7 +124,8 @@ class _RegisterScreenState extends State<RegisterScreen> {
                                   controller: restaurantController,
                                   cursorColor: Palette.loginhead,
                                   decoration: InputDecoration(
-                                      hintText: getTranslated(context, restaurant_name_hint),
+                                      hintText: getTranslated(
+                                          context, restaurant_name_hint),
                                       hintStyle: TextStyle(
                                           color: Palette.switchs, fontSize: 16),
                                       border: InputBorder.none),
@@ -177,10 +181,12 @@ class _RegisterScreenState extends State<RegisterScreen> {
                             decoration: BoxDecoration(
                               color: Palette.white,
                               boxShadow: [
-                                BoxShadow(color: Colors.grey.withOpacity(0.5),
+                                BoxShadow(
+                                  color: Colors.grey.withOpacity(0.5),
                                   spreadRadius: 2,
                                   blurRadius: 3,
-                                  offset: Offset(0, 3),),
+                                  offset: Offset(0, 3),
+                                ),
                               ],
                               borderRadius: BorderRadius.circular(20),
                             ),
@@ -260,10 +266,12 @@ class _RegisterScreenState extends State<RegisterScreen> {
                             decoration: BoxDecoration(
                               color: Palette.white,
                               boxShadow: [
-                                BoxShadow(color: Colors.grey.withOpacity(0.5),
+                                BoxShadow(
+                                  color: Colors.grey.withOpacity(0.5),
                                   spreadRadius: 2,
                                   blurRadius: 3,
-                                  offset: Offset(0, 3),),
+                                  offset: Offset(0, 3),
+                                ),
                               ],
                               borderRadius: BorderRadius.circular(20),
                             ),
@@ -293,10 +301,12 @@ class _RegisterScreenState extends State<RegisterScreen> {
                             decoration: BoxDecoration(
                               color: Palette.white,
                               boxShadow: [
-                                BoxShadow(color: Colors.grey.withOpacity(0.5),
+                                BoxShadow(
+                                  color: Colors.grey.withOpacity(0.5),
                                   spreadRadius: 2,
                                   blurRadius: 3,
-                                  offset: Offset(0, 3),),
+                                  offset: Offset(0, 3),
+                                ),
                               ],
                               borderRadius: BorderRadius.circular(20),
                             ),
@@ -376,10 +386,12 @@ class _RegisterScreenState extends State<RegisterScreen> {
                             decoration: BoxDecoration(
                               color: Palette.white,
                               boxShadow: [
-                                BoxShadow(color: Colors.grey.withOpacity(0.5),
+                                BoxShadow(
+                                  color: Colors.grey.withOpacity(0.5),
                                   spreadRadius: 2,
                                   blurRadius: 3,
-                                  offset: Offset(0, 3),),
+                                  offset: Offset(0, 3),
+                                ),
                               ],
                               borderRadius: BorderRadius.circular(20),
                             ),
@@ -474,10 +486,12 @@ class _RegisterScreenState extends State<RegisterScreen> {
                             decoration: BoxDecoration(
                               color: Palette.white,
                               boxShadow: [
-                                BoxShadow(color: Colors.grey.withOpacity(0.5),
+                                BoxShadow(
+                                  color: Colors.grey.withOpacity(0.5),
                                   spreadRadius: 2,
                                   blurRadius: 3,
-                                  offset: Offset(0, 3),),
+                                  offset: Offset(0, 3),
+                                ),
                               ],
                               borderRadius: BorderRadius.circular(20),
                             ),
@@ -511,7 +525,8 @@ class _RegisterScreenState extends State<RegisterScreen> {
                                           });
                                         },
                                       ),
-                                      hintText: getTranslated(context, confirm_password_hint),
+                                      hintText: getTranslated(
+                                          context, confirm_password_hint),
                                       alignLabelWithHint: true,
                                       hintStyle: TextStyle(
                                           color: Palette.switchs, fontSize: 16),
@@ -587,7 +602,8 @@ class _RegisterScreenState extends State<RegisterScreen> {
                     onPressed: () {
                       if (restaurantController.text.toString().isEmpty) {
                         setState(() {
-                          restaurantError = getTranslated(context, empty_error_text);
+                          restaurantError =
+                              getTranslated(context, empty_error_text);
                         });
                       } else if (emailController.text.toString().isEmpty) {
                         setState(() {
@@ -599,17 +615,27 @@ class _RegisterScreenState extends State<RegisterScreen> {
                             getTranslated(context, email_valid_error_text);
                         setState(() {});
                       } else if (contactController.text.isEmpty) {
-                        setState(() {contactError = getTranslated(context, empty_error_text);});
-                      } else if (contactController.text.toString().length != 10) {
-                        setState(() {contactError = getTranslated(context, enter_valid_contact_number);});
+                        setState(() {
+                          contactError =
+                              getTranslated(context, empty_error_text);
+                        });
+                      } else if (contactController.text.toString().length !=
+                          10) {
+                        setState(() {
+                          contactError = getTranslated(
+                              context, enter_valid_contact_number);
+                        });
                       } else if (passController.text.isEmpty) {
                         passError = getTranslated(context, empty_error_text);
                         setState(() {});
                       } else if (confirmPassController.text.isEmpty) {
-                        confirmPassError = getTranslated(context, empty_error_text);
+                        confirmPassError =
+                            getTranslated(context, empty_error_text);
                         setState(() {});
-                      } else if (passController.text.toString() != confirmPassController.text) {
-                        confirmPassError = getTranslated(context, not_match_pass);
+                      } else if (passController.text.toString() !=
+                          confirmPassController.text) {
+                        confirmPassError =
+                            getTranslated(context, not_match_pass);
                         setState(() {});
                       } else {
                         Map<String, String> param = new HashMap();
@@ -672,10 +698,12 @@ class _RegisterScreenState extends State<RegisterScreen> {
       response = await ApiClient(ApiHeader().dioData()).register(param);
 
       if (response.data!.isVerified == 1) {
-       // saveValueInPref(response);
-        Navigator.pushReplacement(context, new MaterialPageRoute(builder: (context) => LoginScreen()));
+        // saveValueInPref(response);
+        Navigator.pushReplacement(context,
+            new MaterialPageRoute(builder: (context) => LoginScreen()));
       } else {
-        Navigator.pushReplacement(context, new MaterialPageRoute(builder: (context) => OtpScreen(response)));
+        Navigator.pushReplacement(context,
+            new MaterialPageRoute(builder: (context) => OtpScreen(response)));
       }
 
       setState(() {
@@ -690,7 +718,6 @@ class _RegisterScreenState extends State<RegisterScreen> {
     }
     return BaseModel()..data = response;
   }
-
 
   /*void saveValueInPref(User response) {
     SharedPreferenceHelper.setBoolean(Preferences.is_logged_in, true);

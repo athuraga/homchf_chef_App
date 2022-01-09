@@ -1,8 +1,7 @@
-
-import 'package:mealup_restaurant_side/retrofit/api_client.dart';
-import 'package:mealup_restaurant_side/retrofit/api_header.dart';
-import 'package:mealup_restaurant_side/retrofit/base_model.dart';
-import 'package:mealup_restaurant_side/retrofit/server_error.dart';
+import 'package:homchf_chef_side/retrofit/api_client.dart';
+import 'package:homchf_chef_side/retrofit/api_header.dart';
+import 'package:homchf_chef_side/retrofit/base_model.dart';
+import 'package:homchf_chef_side/retrofit/server_error.dart';
 
 Future<BaseModel<VendorDetail>> getVendorDetails() async {
   VendorDetail response;
@@ -15,7 +14,6 @@ Future<BaseModel<VendorDetail>> getVendorDetails() async {
   return BaseModel()..data = response;
 }
 
-
 class VendorDetail {
   bool? _success;
   Data? _data;
@@ -23,12 +21,10 @@ class VendorDetail {
   bool? get success => _success;
   Data? get data => _data;
 
-  VendorDetail({
-      bool? success, 
-      Data? data}){
+  VendorDetail({bool? success, Data? data}) {
     _success = success;
     _data = data;
-}
+  }
 
   VendorDetail.fromJson(dynamic json) {
     _success = json["success"];
@@ -43,8 +39,8 @@ class VendorDetail {
     }
     return map;
   }
-
 }
+
 class Data {
   int? _id;
   int? _userId;
@@ -116,41 +112,41 @@ class Data {
   double? get rate => _rate;
   int? get review => _review;
 
-  Data({
-      int? id, 
-      int? userId, 
-      String? name, 
-      String? vendorLogo, 
-      String? emailId, 
-      String? image, 
-      dynamic password, 
-      String? contact, 
-      String? cuisineId, 
-      String? address, 
-      String? lat, 
-      String? lang, 
-      String? mapAddress, 
-      String? minOrderAmount, 
-      String? forTwoPerson, 
-      String? avgDeliveryTime, 
-      String? licenseNumber, 
-      String? adminComissionType, 
-      String? adminComissionValue, 
-      String? vendorType, 
-      String? timeSlot, 
-      String? tax, 
-      dynamic deliveryTypeTimeSlot, 
-      int? isExplorer, 
-      int? isTop, 
-      int? vendorOwnDriver, 
-      dynamic paymentOption, 
-      int? status, 
-      String? vendorLanguage, 
-      String? createdAt, 
-      String? updatedAt, 
+  Data(
+      {int? id,
+      int? userId,
+      String? name,
+      String? vendorLogo,
+      String? emailId,
+      String? image,
+      dynamic password,
+      String? contact,
+      String? cuisineId,
+      String? address,
+      String? lat,
+      String? lang,
+      String? mapAddress,
+      String? minOrderAmount,
+      String? forTwoPerson,
+      String? avgDeliveryTime,
+      String? licenseNumber,
+      String? adminComissionType,
+      String? adminComissionValue,
+      String? vendorType,
+      String? timeSlot,
+      String? tax,
+      dynamic deliveryTypeTimeSlot,
+      int? isExplorer,
+      int? isTop,
+      int? vendorOwnDriver,
+      dynamic paymentOption,
+      int? status,
+      String? vendorLanguage,
+      String? createdAt,
+      String? updatedAt,
       List<Cuisine>? cuisine,
-    double? rate,
-    int? review}){
+      double? rate,
+      int? review}) {
     _id = id;
     _userId = userId;
     _name = name;
@@ -185,7 +181,7 @@ class Data {
     _cuisine = cuisine;
     _rate = rate;
     _review = review;
-}
+  }
 
   Data.fromJson(dynamic json) {
     _id = json["id"];
@@ -269,7 +265,6 @@ class Data {
     map["review"] = _review;
     return map;
   }
-
 }
 
 class Cuisine {
@@ -279,12 +274,10 @@ class Cuisine {
   String? get name => _name;
   String? get image => _image;
 
-  Cuisine({
-      String? name, 
-      String? image}){
+  Cuisine({String? name, String? image}) {
     _name = name;
     _image = image;
-}
+  }
 
   Cuisine.fromJson(dynamic json) {
     _name = json["name"];
@@ -297,5 +290,4 @@ class Cuisine {
     map["image"] = _image;
     return map;
   }
-
 }

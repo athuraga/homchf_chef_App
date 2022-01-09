@@ -1,9 +1,7 @@
-import 'package:mealup_restaurant_side/retrofit/api_client.dart';
-import 'package:mealup_restaurant_side/retrofit/api_header.dart';
-import 'package:mealup_restaurant_side/retrofit/base_model.dart';
-import 'package:mealup_restaurant_side/retrofit/server_error.dart';
-
-
+import 'package:homchf_chef_side/retrofit/api_client.dart';
+import 'package:homchf_chef_side/retrofit/api_header.dart';
+import 'package:homchf_chef_side/retrofit/base_model.dart';
+import 'package:homchf_chef_side/retrofit/server_error.dart';
 
 Future<BaseModel<Menu>> getMenu() async {
   Menu response;
@@ -23,12 +21,10 @@ class Menu {
   bool? get success => _success;
   List<Data?>? get data => _data;
 
-  Menu({
-      bool? success, 
-      List<Data?>? data}){
+  Menu({bool? success, List<Data?>? data}) {
     _success = success;
     _data = data;
-}
+  }
 
   Menu.fromJson(dynamic json) {
     _success = json["success"];
@@ -61,16 +57,12 @@ class Data {
   String? get image => _image;
   int? get status => _status;
 
-  Data({
-      int? id,
-      String? name,
-      String? image, 
-      int? status}){
+  Data({int? id, String? name, String? image, int? status}) {
     _id = id;
     _name = name;
     _image = image;
     _status = status;
-}
+  }
 
   Data.fromJson(dynamic json) {
     _id = json["id"];
@@ -87,5 +79,4 @@ class Data {
     map["status"] = _status;
     return map;
   }
-
 }

@@ -1,16 +1,15 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:mealup_restaurant_side/config/Palette.dart';
-import 'package:mealup_restaurant_side/constant/app_strings.dart';
-import 'package:mealup_restaurant_side/localization/localization_constant.dart';
-import 'package:mealup_restaurant_side/models/earning_history_response.dart';
-import 'package:mealup_restaurant_side/retrofit/base_model.dart';
-import 'package:mealup_restaurant_side/utilities/device_utils.dart';
-import 'package:mealup_restaurant_side/utilities/prefConstatnt.dart';
-import 'package:mealup_restaurant_side/utilities/preference.dart';
+import 'package:homchf_chef_side/config/Palette.dart';
+import 'package:homchf_chef_side/constant/app_strings.dart';
+import 'package:homchf_chef_side/localization/localization_constant.dart';
+import 'package:homchf_chef_side/models/earning_history_response.dart';
+import 'package:homchf_chef_side/retrofit/base_model.dart';
+import 'package:homchf_chef_side/utilities/device_utils.dart';
+import 'package:homchf_chef_side/utilities/prefConstatnt.dart';
+import 'package:homchf_chef_side/utilities/preference.dart';
 import 'package:syncfusion_flutter_charts/charts.dart';
-
 
 List<Color> gradientColors = [
   const Color(0xff23b6e6),
@@ -56,7 +55,10 @@ class _EarningHistoryScreenState extends State<EarningHistoryScreen> {
         centerTitle: true,
         title: Text(
           getTranslated(context, earning_history)!,
-          style: TextStyle(fontFamily: "ProximaBold", color: Palette.loginhead, fontSize: 17),
+          style: TextStyle(
+              fontFamily: "ProximaBold",
+              color: Palette.loginhead,
+              fontSize: 17),
         ),
         leading: IconButton(
             icon: Icon(
@@ -75,8 +77,8 @@ class _EarningHistoryScreenState extends State<EarningHistoryScreen> {
         child: RefreshIndicator(
           onRefresh: _refreshEarningHistory,
           child: FutureBuilder<BaseModel<EarningHistoryResponse>>(
-            future:
-                earningHistoryFuture!.then((value) => value as BaseModel<EarningHistoryResponse>),
+            future: earningHistoryFuture!
+                .then((value) => value as BaseModel<EarningHistoryResponse>),
             builder: (context, snapshot) {
               if (snapshot.connectionState != ConnectionState.done) {
                 return DeviceUtils.showProgress(true);
@@ -95,14 +97,17 @@ class _EarningHistoryScreenState extends State<EarningHistoryScreen> {
                       child: Column(
                         children: [
                           Container(
-                            decoration: BoxDecoration(boxShadow: [
-                              BoxShadow(
-                                color: Colors.grey.withOpacity(0.5),
-                                spreadRadius: 2,
-                                blurRadius: 3,
-                                offset: Offset(0, 3),
-                              ),
-                            ], borderRadius: BorderRadius.circular(20), color: Colors.white),
+                            decoration: BoxDecoration(
+                                boxShadow: [
+                                  BoxShadow(
+                                    color: Colors.grey.withOpacity(0.5),
+                                    spreadRadius: 2,
+                                    blurRadius: 3,
+                                    offset: Offset(0, 3),
+                                  ),
+                                ],
+                                borderRadius: BorderRadius.circular(20),
+                                color: Colors.white),
                             height: MediaQuery.of(context).size.height * 0.1,
                             width: MediaQuery.of(context).size.width,
                             child: Padding(
@@ -139,20 +144,26 @@ class _EarningHistoryScreenState extends State<EarningHistoryScreen> {
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
                               Container(
-                                decoration: BoxDecoration(boxShadow: [
-                                  BoxShadow(
-                                    color: Colors.grey.withOpacity(0.5),
-                                    spreadRadius: 2,
-                                    blurRadius: 3,
-                                    offset: Offset(0, 3),
-                                  ),
-                                ], borderRadius: BorderRadius.circular(20), color: Colors.white),
-                                height: MediaQuery.of(context).size.height * 0.15,
+                                decoration: BoxDecoration(
+                                    boxShadow: [
+                                      BoxShadow(
+                                        color: Colors.grey.withOpacity(0.5),
+                                        spreadRadius: 2,
+                                        blurRadius: 3,
+                                        offset: Offset(0, 3),
+                                      ),
+                                    ],
+                                    borderRadius: BorderRadius.circular(20),
+                                    color: Colors.white),
+                                height:
+                                    MediaQuery.of(context).size.height * 0.15,
                                 width: MediaQuery.of(context).size.width * 0.4,
                                 child: Padding(
-                                  padding: const EdgeInsets.fromLTRB(10, 0, 0, 20),
+                                  padding:
+                                      const EdgeInsets.fromLTRB(10, 0, 0, 20),
                                   child: Column(
-                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
                                     mainAxisAlignment: MainAxisAlignment.end,
                                     children: [
                                       Text(
@@ -174,20 +185,26 @@ class _EarningHistoryScreenState extends State<EarningHistoryScreen> {
                                 ),
                               ),
                               Container(
-                                decoration: BoxDecoration(boxShadow: [
-                                  BoxShadow(
-                                    color: Colors.grey.withOpacity(0.5),
-                                    spreadRadius: 2,
-                                    blurRadius: 3,
-                                    offset: Offset(0, 3),
-                                  ),
-                                ], borderRadius: BorderRadius.circular(20), color: Colors.white),
-                                height: MediaQuery.of(context).size.height * 0.15,
+                                decoration: BoxDecoration(
+                                    boxShadow: [
+                                      BoxShadow(
+                                        color: Colors.grey.withOpacity(0.5),
+                                        spreadRadius: 2,
+                                        blurRadius: 3,
+                                        offset: Offset(0, 3),
+                                      ),
+                                    ],
+                                    borderRadius: BorderRadius.circular(20),
+                                    color: Colors.white),
+                                height:
+                                    MediaQuery.of(context).size.height * 0.15,
                                 width: MediaQuery.of(context).size.width * 0.4,
                                 child: Padding(
-                                  padding: const EdgeInsets.fromLTRB(10, 0, 0, 20),
+                                  padding:
+                                      const EdgeInsets.fromLTRB(10, 0, 0, 20),
                                   child: Column(
-                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
                                     mainAxisAlignment: MainAxisAlignment.end,
                                     children: [
                                       Text(
@@ -217,20 +234,26 @@ class _EarningHistoryScreenState extends State<EarningHistoryScreen> {
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
                               Container(
-                                decoration: BoxDecoration(boxShadow: [
-                                  BoxShadow(
-                                    color: Colors.grey.withOpacity(0.5),
-                                    spreadRadius: 2,
-                                    blurRadius: 3,
-                                    offset: Offset(0, 3),
-                                  ),
-                                ], borderRadius: BorderRadius.circular(20), color: Colors.white),
-                                height: MediaQuery.of(context).size.height * 0.15,
+                                decoration: BoxDecoration(
+                                    boxShadow: [
+                                      BoxShadow(
+                                        color: Colors.grey.withOpacity(0.5),
+                                        spreadRadius: 2,
+                                        blurRadius: 3,
+                                        offset: Offset(0, 3),
+                                      ),
+                                    ],
+                                    borderRadius: BorderRadius.circular(20),
+                                    color: Colors.white),
+                                height:
+                                    MediaQuery.of(context).size.height * 0.15,
                                 width: MediaQuery.of(context).size.width * 0.4,
                                 child: Padding(
-                                  padding: const EdgeInsets.fromLTRB(10, 0, 0, 20),
+                                  padding:
+                                      const EdgeInsets.fromLTRB(10, 0, 0, 20),
                                   child: Column(
-                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
                                     mainAxisAlignment: MainAxisAlignment.end,
                                     children: [
                                       Text(
@@ -252,20 +275,26 @@ class _EarningHistoryScreenState extends State<EarningHistoryScreen> {
                                 ),
                               ),
                               Container(
-                                decoration: BoxDecoration(boxShadow: [
-                                  BoxShadow(
-                                    color: Colors.grey.withOpacity(0.5),
-                                    spreadRadius: 2,
-                                    blurRadius: 3,
-                                    offset: Offset(0, 3),
-                                  ),
-                                ], borderRadius: BorderRadius.circular(20), color: Colors.white),
-                                height: MediaQuery.of(context).size.height * 0.15,
+                                decoration: BoxDecoration(
+                                    boxShadow: [
+                                      BoxShadow(
+                                        color: Colors.grey.withOpacity(0.5),
+                                        spreadRadius: 2,
+                                        blurRadius: 3,
+                                        offset: Offset(0, 3),
+                                      ),
+                                    ],
+                                    borderRadius: BorderRadius.circular(20),
+                                    color: Colors.white),
+                                height:
+                                    MediaQuery.of(context).size.height * 0.15,
                                 width: MediaQuery.of(context).size.width * 0.4,
                                 child: Padding(
-                                  padding: const EdgeInsets.fromLTRB(10, 0, 0, 20),
+                                  padding:
+                                      const EdgeInsets.fromLTRB(10, 0, 0, 20),
                                   child: Column(
-                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
                                     mainAxisAlignment: MainAxisAlignment.end,
                                     children: [
                                       Text(
@@ -293,29 +322,37 @@ class _EarningHistoryScreenState extends State<EarningHistoryScreen> {
                           ),
                           Container(
                               padding: EdgeInsets.all(10),
-                              decoration: BoxDecoration(boxShadow: [
-                                /*BoxShadow(
+                              decoration: BoxDecoration(
+                                  boxShadow: [
+                                    /*BoxShadow(
                                   color: Colors.grey.withOpacity(0.5),
                                   spreadRadius: 2,
                                   blurRadius: 3,
                                   offset: Offset(0, 3),
                                 ),*/
-                              ], borderRadius: BorderRadius.circular(0), color: Colors.white),
+                                  ],
+                                  borderRadius: BorderRadius.circular(0),
+                                  color: Colors.white),
                               child: Column(
                                 children: [
                                   Align(
                                     alignment: Alignment.topLeft,
                                     child: Row(
-                                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.spaceBetween,
                                       children: [
                                         Column(
-                                          crossAxisAlignment: CrossAxisAlignment.start,
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.start,
                                           children: [
-                                            Text(getTranslated(context, earnings)!,
+                                            Text(
+                                                getTranslated(
+                                                    context, earnings)!,
                                                 style: TextStyle(
                                                     color: Palette.loginhead,
                                                     fontSize: 16,
-                                                    fontWeight: FontWeight.bold)),
+                                                    fontWeight:
+                                                        FontWeight.bold)),
                                           ],
                                         ),
                                         /* DropdownButton<String>(
@@ -375,7 +412,8 @@ class _EarningHistoryScreenState extends State<EarningHistoryScreen> {
             ),
             labelStyle: TextStyle(fontWeight: FontWeight.bold)),
         primaryYAxis: NumericAxis(
-            labelFormat: '${SharedPreferenceHelper.getString(Preferences.currency_symbol)}{value}',
+            labelFormat:
+                '${SharedPreferenceHelper.getString(Preferences.currency_symbol)}{value}',
             labelStyle: TextStyle(fontWeight: FontWeight.bold)),
         plotAreaBorderWidth: 0,
         // Enable legend

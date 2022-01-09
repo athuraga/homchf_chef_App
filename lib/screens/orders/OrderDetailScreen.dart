@@ -4,11 +4,11 @@ import 'package:dotted_line/dotted_line.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:mealup_restaurant_side/config/Palette.dart';
-import 'package:mealup_restaurant_side/constant/app_strings.dart';
-import 'package:mealup_restaurant_side/models/orders_response.dart';
-import 'package:mealup_restaurant_side/utilities/prefConstatnt.dart';
-import 'package:mealup_restaurant_side/utilities/preference.dart';
+import 'package:homchf_chef_side/config/Palette.dart';
+import 'package:homchf_chef_side/constant/app_strings.dart';
+import 'package:homchf_chef_side/models/orders_response.dart';
+import 'package:homchf_chef_side/utilities/prefConstatnt.dart';
+import 'package:homchf_chef_side/utilities/preference.dart';
 import 'package:sizer/sizer.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -182,11 +182,11 @@ class _OrderDetailScreenState extends State<OrderDetailScreen> {
                                   child: SizedBox(
                                     width: 200,
                                     child: Text(
-                                      'Delivery Date, Time, Pick-Up-Point & Food Allergies',
+                                      'Order Details',
                                       style: TextStyle(
                                           color: Colors.green,
                                           fontFamily: proxima_nova_reg,
-                                          fontSize: 12,
+                                          fontSize: 11,
                                           fontWeight: FontWeight.bold),
                                     ),
                                   ),
@@ -206,12 +206,13 @@ class _OrderDetailScreenState extends State<OrderDetailScreen> {
                                       '${data!.orderSchedule}',
                                       maxLines: 8,
                                       softWrap: false,
+                                      textAlign: TextAlign.left,
                                       overflow: TextOverflow.ellipsis,
                                       style: TextStyle(
                                           color: Palette.loginhead,
                                           fontFamily: proxima_nova_thin,
                                           fontStyle: FontStyle.italic,
-                                          fontSize: 15),
+                                          fontSize: 14),
                                     ),
                                   ),
                                 ),

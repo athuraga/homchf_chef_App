@@ -1,7 +1,7 @@
-import 'package:mealup_restaurant_side/retrofit/api_client.dart';
-import 'package:mealup_restaurant_side/retrofit/api_header.dart';
-import 'package:mealup_restaurant_side/retrofit/base_model.dart';
-import 'package:mealup_restaurant_side/retrofit/server_error.dart';
+import 'package:homchf_chef_side/retrofit/api_client.dart';
+import 'package:homchf_chef_side/retrofit/api_header.dart';
+import 'package:homchf_chef_side/retrofit/base_model.dart';
+import 'package:homchf_chef_side/retrofit/server_error.dart';
 
 /// success : true
 /// data : {"today_order":0,"total_order":52,"total_earnings":4820,"today_earnings":0,"total_menu":4,"total_submenu":7,"order_chart":[{"data":35,"label":"Sep"},{"data":35,"label":"Aug"},{"data":35,"label":"Jul"},{"data":35,"label":"Jun"},{"data":35,"label":"May"},{"data":35,"label":"Apr"},{"data":35,"label":"Mar"},{"data":35,"label":"Mar"},{"data":35,"label":"Feb"},{"data":35,"label":"Jan"},{"data":35,"label":"Dec"},{"data":35,"label":"Nov"}],"earning_chart":[{"data":0,"label":"Sep"},{"data":0,"label":"Aug"},{"data":0,"label":"Jul"},{"data":0,"label":"Jun"},{"data":0,"label":"May"},{"data":0,"label":"Apr"},{"data":0,"label":"Mar"},{"data":0,"label":"Mar"},{"data":0,"label":"Feb"},{"data":0,"label":"Jan"},{"data":0,"label":"Dec"},{"data":0,"label":"Nov"}]}
@@ -19,8 +19,9 @@ Future<BaseModel<InsightsResponse>> getInsights() async {
 
 class InsightsResponse {
   InsightsResponse({
-      this.success, 
-      this.data,});
+    this.success,
+    this.data,
+  });
 
   InsightsResponse.fromJson(dynamic json) {
     success = json['success'];
@@ -37,7 +38,6 @@ class InsightsResponse {
     }
     return map;
   }
-
 }
 
 /// today_order : 0
@@ -51,14 +51,15 @@ class InsightsResponse {
 
 class Data {
   Data({
-      this.todayOrder, 
-      this.totalOrder, 
-      this.totalEarnings, 
-      this.todayEarnings, 
-      this.totalMenu, 
-      this.totalSubmenu, 
-      this.orderChart, 
-      this.earningChart,});
+    this.todayOrder,
+    this.totalOrder,
+    this.totalEarnings,
+    this.todayEarnings,
+    this.totalMenu,
+    this.totalSubmenu,
+    this.orderChart,
+    this.earningChart,
+  });
 
   Data.fromJson(dynamic json) {
     todayOrder = json['today_order'];
@@ -105,7 +106,6 @@ class Data {
     }
     return map;
   }
-
 }
 
 /// data : 0
@@ -113,8 +113,9 @@ class Data {
 
 class Earning_chart {
   Earning_chart({
-      this.data, 
-      this.label,});
+    this.data,
+    this.label,
+  });
 
   Earning_chart.fromJson(dynamic json) {
     data = json['data'];
@@ -129,7 +130,6 @@ class Earning_chart {
     map['label'] = label;
     return map;
   }
-
 }
 
 /// data : 35
@@ -137,8 +137,9 @@ class Earning_chart {
 
 class Order_chart {
   Order_chart({
-      this.data, 
-      this.label,});
+    this.data,
+    this.label,
+  });
 
   Order_chart.fromJson(dynamic json) {
     data = json['data'];
@@ -153,5 +154,4 @@ class Order_chart {
     map['label'] = label;
     return map;
   }
-
 }

@@ -1,8 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:mealup_restaurant_side/config/Palette.dart';
-import 'package:mealup_restaurant_side/screens/product/CustomizationOptionScreen.dart';
-import 'package:mealup_restaurant_side/screens/product/ProductScreen.dart';
+import 'package:homchf_chef_side/config/Palette.dart';
+import 'package:homchf_chef_side/screens/product/CustomizationOptionScreen.dart';
+import 'package:homchf_chef_side/screens/product/ProductScreen.dart';
 
 class AddItem extends StatefulWidget {
   @override
@@ -313,12 +313,11 @@ class _AddItemState extends State<AddItem> {
           ],
         ),
       ),
-      bottomNavigationBar: GestureDetector(onTap: (){
-        Navigator.pushReplacement(
-            context,
-            MaterialPageRoute(
-                builder: (context) => ProductScreen()));
-      },
+      bottomNavigationBar: GestureDetector(
+        onTap: () {
+          Navigator.pushReplacement(context,
+              MaterialPageRoute(builder: (context) => ProductScreen()));
+        },
         child: Container(
           color: Palette.green,
           height: MediaQuery.of(context).size.height * 0.07,
@@ -326,7 +325,9 @@ class _AddItemState extends State<AddItem> {
             child: Text(
               "Add This Item",
               style: TextStyle(
-                  fontSize: 15, color: Palette.white, fontFamily: "ProximaNova"),
+                  fontSize: 15,
+                  color: Palette.white,
+                  fontFamily: "ProximaNova"),
             ),
           ),
         ),

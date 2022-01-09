@@ -1,7 +1,7 @@
-import 'package:mealup_restaurant_side/retrofit/api_client.dart';
-import 'package:mealup_restaurant_side/retrofit/api_header.dart';
-import 'package:mealup_restaurant_side/retrofit/base_model.dart';
-import 'package:mealup_restaurant_side/retrofit/server_error.dart';
+import 'package:homchf_chef_side/retrofit/api_client.dart';
+import 'package:homchf_chef_side/retrofit/api_header.dart';
+import 'package:homchf_chef_side/retrofit/base_model.dart';
+import 'package:homchf_chef_side/retrofit/server_error.dart';
 
 Future<BaseModel<FaqResponse>> getFaq() async {
   FaqResponse response;
@@ -21,12 +21,10 @@ class FaqResponse {
   bool? get success => _success;
   List<Data>? get data => _data;
 
-  FaqResponse({
-      bool? success, 
-      List<Data>? data}){
+  FaqResponse({bool? success, List<Data>? data}) {
     _success = success;
     _data = data;
-}
+  }
 
   FaqResponse.fromJson(dynamic json) {
     _success = json["success"];
@@ -46,7 +44,6 @@ class FaqResponse {
     }
     return map;
   }
-
 }
 
 class Data {
@@ -64,20 +61,20 @@ class Data {
   String? get createdAt => _createdAt;
   String? get updatedAt => _updatedAt;
 
-  Data({
-      int? id, 
-      String? question, 
-      String? type, 
-      String? answer, 
-      String? createdAt, 
-      String? updatedAt}){
+  Data(
+      {int? id,
+      String? question,
+      String? type,
+      String? answer,
+      String? createdAt,
+      String? updatedAt}) {
     _id = id;
     _question = question;
     _type = type;
     _answer = answer;
     _createdAt = createdAt;
     _updatedAt = updatedAt;
-}
+  }
 
   Data.fromJson(dynamic json) {
     _id = json["id"];
@@ -98,5 +95,4 @@ class Data {
     map["updated_at"] = _updatedAt;
     return map;
   }
-
 }

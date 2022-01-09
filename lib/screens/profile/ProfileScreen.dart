@@ -2,21 +2,21 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:mealup_restaurant_side/config/Palette.dart';
-import 'package:mealup_restaurant_side/constant/app_strings.dart';
-import 'package:mealup_restaurant_side/utilities/device_utils.dart';
-import 'package:mealup_restaurant_side/localization/localization_constant.dart';
-import 'package:mealup_restaurant_side/models/vendor_detail.dart';
-import 'package:mealup_restaurant_side/retrofit/base_model.dart';
-import 'package:mealup_restaurant_side/screens/auth/LoginScreen.dart';
-import 'package:mealup_restaurant_side/screens/profile/screens/CashBalanceScreen.dart';
-import 'package:mealup_restaurant_side/screens/profile/screens/ChangeLanguageScreen.dart';
-import 'package:mealup_restaurant_side/screens/profile/screens/ChangePasswordScreen.dart';
-import 'package:mealup_restaurant_side/screens/profile/screens/EarningHistoryScreen.dart';
-import 'package:mealup_restaurant_side/screens/profile/screens/FaqScreen.dart';
-import 'package:mealup_restaurant_side/screens/profile/screens/ProfileEditScreen.dart';
-import 'package:mealup_restaurant_side/utilities/prefConstatnt.dart';
-import 'package:mealup_restaurant_side/utilities/preference.dart';
+import 'package:homchf_chef_side/config/Palette.dart';
+import 'package:homchf_chef_side/constant/app_strings.dart';
+import 'package:homchf_chef_side/utilities/device_utils.dart';
+import 'package:homchf_chef_side/localization/localization_constant.dart';
+import 'package:homchf_chef_side/models/vendor_detail.dart';
+import 'package:homchf_chef_side/retrofit/base_model.dart';
+import 'package:homchf_chef_side/screens/auth/LoginScreen.dart';
+import 'package:homchf_chef_side/screens/profile/screens/CashBalanceScreen.dart';
+import 'package:homchf_chef_side/screens/profile/screens/ChangeLanguageScreen.dart';
+import 'package:homchf_chef_side/screens/profile/screens/ChangePasswordScreen.dart';
+import 'package:homchf_chef_side/screens/profile/screens/EarningHistoryScreen.dart';
+import 'package:homchf_chef_side/screens/profile/screens/FaqScreen.dart';
+import 'package:homchf_chef_side/screens/profile/screens/ProfileEditScreen.dart';
+import 'package:homchf_chef_side/utilities/prefConstatnt.dart';
+import 'package:homchf_chef_side/utilities/preference.dart';
 
 class ProfileScreen extends StatefulWidget {
   @override
@@ -244,7 +244,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                           leading: SvgPicture.asset(
                               "assets/images/profilelanguage.svg"),
                           title: Text(
-                             getTranslated(context, change_app_language)!,
+                            getTranslated(context, change_app_language)!,
                             style: TextStyle(
                                 color: Palette.loginhead,
                                 fontFamily: "ProximaNova",
@@ -432,7 +432,12 @@ class _ProfileScreenState extends State<ProfileScreen> {
                       SizedBox(
                         height: MediaQuery.of(context).size.height * 0.04,
                       ),
-                      Center(child: Image.asset("assets/images/logo.png",height: 50,width: 200,)),
+                      Center(
+                          child: Image.asset(
+                        "assets/images/logo.png",
+                        height: 50,
+                        width: 200,
+                      )),
                       Center(
                           child: Text(
                         "Version 1.0.0",

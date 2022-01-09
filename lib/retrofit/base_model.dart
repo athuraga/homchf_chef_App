@@ -1,4 +1,4 @@
-import 'package:mealup_restaurant_side/retrofit/server_error.dart';
+import 'package:homchf_chef_side/retrofit/server_error.dart';
 
 class BaseModel<T> {
   late ServerError error;
@@ -6,7 +6,7 @@ class BaseModel<T> {
   /*Status status ;
   String? message;*/
 
- /* BaseModel.loading(this.message) : status = Status.LOADING;
+  /* BaseModel.loading(this.message) : status = Status.LOADING;
   BaseModel.completed(this.data) : status = Status.COMPLETED;
   BaseModel.error(this.message) : status = Status.ERROR;*/
 
