@@ -1,4 +1,4 @@
-package app.saasmonks.mealup.vendor
+package app.one.homchf.vendor
 
 import io.flutter.embedding.android.FlutterActivity
 

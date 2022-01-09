@@ -1,18 +1,16 @@
 {
-  "version": 2,
-  "artifactType": {
-    "type": "APK",
-    "kind": "Directory"
-  },
-  "applicationId": "app.saasmonks.mealup.vendor",
-  "variantName": "processReleaseResources",
-  "elements": [
-    {
-      "type": "SINGLE",
-      "filters": [],
-      "versionCode": 1,
-      "versionName": "1.0.0",
-      "outputFile": "app-release.apk"
-    }
-  ]
+    "version": 2,
+    "artifactType": {
+        "type": "APK",
+        "kind": "Directory"
+    },
+    "applicationId": "app.one.homchf.vendor",
+    "variantName": "processReleaseResources",
+    "elements": [{
+        "type": "SINGLE",
+        "filters": [],
+        "versionCode": 1,
+        "versionName": "1.0.0",
+        "outputFile": "app-release.apk"
+    }]
 }
