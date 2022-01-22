@@ -1,4 +1,0 @@
-#Thu Jan 20 14:33:55 CET 2022
-base.0=/Users/wbr/Documents/git_repos/homchf_chef_App/build/app/intermediates/dex/debug/mergeDexDebug/classes.dex
-renamed.0=classes.dex
-path.0=classes.dex

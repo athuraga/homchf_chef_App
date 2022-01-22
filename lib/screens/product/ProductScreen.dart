@@ -146,7 +146,7 @@ class _ProductScreenState extends State<ProductScreen>
   _productList(int? id) {
     AdvancedSwitchController _controller = AdvancedSwitchController();
     return RefreshIndicator(
-      color: Palette.green,
+      color: Color(0xFF06C168),
       onRefresh: _refreshProduct,
       child: Container(
           decoration: BoxDecoration(
@@ -400,7 +400,7 @@ class _ProductScreenState extends State<ProductScreen>
                                             quarterTurns: 3,
                                             child: AdvancedSwitch(
                                               controller: _controller,
-                                              activeColor: Palette.green,
+                                              activeColor: Color(0xFF06C168),
                                               inactiveColor: Palette.removeacct,
                                               borderRadius: BorderRadius.all(
                                                   const Radius.circular(5)),
@@ -421,7 +421,8 @@ class _ProductScreenState extends State<ProductScreen>
                                                       "IN STOCK",
                                                       style: TextStyle(
                                                           fontSize: 10,
-                                                          color: Palette.green),
+                                                          color: Color(
+                                                              0xFF06C168)),
                                                     )
                                                   : Text(
                                                       "OUT OF STOCK",
@@ -564,7 +565,7 @@ class _ProductScreenState extends State<ProductScreen>
                               controller: productData.status == 1
                                   ? AdvancedSwitchController(true)
                                   : AdvancedSwitchController(false),
-                              activeColor: Palette.green,
+                              activeColor: Color(0xFF06C168),
                               inactiveColor: Palette.removeacct,
                               borderRadius:
                                   BorderRadius.all(const Radius.circular(5)),
@@ -582,7 +583,8 @@ class _ProductScreenState extends State<ProductScreen>
                                   ? Text(
                                       "IN STOCK",
                                       style: TextStyle(
-                                          fontSize: 10, color: Palette.green),
+                                          fontSize: 10,
+                                          color: Color(0xFF06C168)),
                                     )
                                   : Text(
                                       "OUT OF STOCK",
@@ -719,7 +721,7 @@ class _ProductScreenState extends State<ProductScreen>
                             AddNewItem(null, true, productData)));
                   },
                   child: Container(
-                    color: Palette.green,
+                    color: Color(0xFF06C168),
                     height: 40,
                     width: 100.w,
                     child: Center(

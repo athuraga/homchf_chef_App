@@ -29,7 +29,8 @@ class Palette {
 
   static const Color blue = Color(0xFF4489DC);
 
-  static const Color green = Color(0xFF06C168);
+  // static const Color green = Color(0xFF06C168);
+  static const Color green = Color(0xFFEE4540);
 
   static const Color inorder = Color(0xFF6CD5CB);
 
@@ -43,5 +44,5 @@ class Palette {
 
   static const Color bottombar = Color(0xFF24292E);
 
-  static const Color theme = Color(0xFF0CEE17);
+  static const Color theme = Color(0xFFEE4540);
 }

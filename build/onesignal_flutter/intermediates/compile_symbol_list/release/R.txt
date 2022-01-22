@@ -1032,6 +1032,7 @@ int string abc_searchview_description_voice 0x0
 int string abc_shareactionprovider_share_with 0x0
 int string abc_shareactionprovider_share_with_application 0x0
 int string abc_toolbar_collapse_description 0x0
+int string androidx_startup 0x0
 int string app_name 0x0
 int string common_google_play_services_enable_button 0x0
 int string common_google_play_services_enable_text 0x0

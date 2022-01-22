@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="app.one.homchf.vendor"
-    android:versionCode="6"
-    android:versionName="1.0.6" >
+    android:versionCode="7"
+    android:versionName="1.0.7" >
 
     <uses-sdk
         android:minSdkVersion="16"
-        android:targetSdkVersion="30" />
+        android:targetSdkVersion="31" />
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
@@ -55,8 +55,9 @@
         <activity
             android:name="app.one.homchf.vendor.MainActivity"
             android:configChanges="orientation|keyboardHidden|keyboard|screenSize|smallestScreenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"
+            android:exported="true"
             android:hardwareAccelerated="true"
-            android:launchMode="singleTop"
+            android:launchMode="singleTask"
             android:requestLegacyExternalStorage="true"
             android:theme="@style/LaunchTheme"
             android:windowSoftInputMode="adjustResize" >
@@ -197,6 +198,13 @@
             android:excludeFromRecents="true"
             android:exported="true"
             android:noHistory="true"
+            android:taskAffinity=""
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+        <activity
+            android:name="com.onesignal.NotificationOpenedReceiverAndroid22AndOlder"
+            android:excludeFromRecents="true"
+            android:exported="true"
+            android:noHistory="true"
             android:theme="@android:style/Theme.Translucent.NoTitleBar" />
         <!--
              FirebaseMessagingService performs security checks at runtime,
@@ -242,11 +250,13 @@
             android:value="@integer/google_play_services_version" />
 
         <provider
-            android:name="androidx.work.impl.WorkManagerInitializer"
-            android:authorities="app.one.homchf.vendor.workmanager-init"
-            android:directBootAware="false"
-            android:exported="false"
-            android:multiprocess="true" />
+            android:name="androidx.startup.InitializationProvider"
+            android:authorities="app.one.homchf.vendor.androidx-startup"
+            android:exported="false" >
+            <meta-data
+                android:name="androidx.work.WorkManagerInitializer"
+                android:value="androidx.startup" />
+        </provider>
 
         <service
             android:name="androidx.work.impl.background.systemalarm.SystemAlarmService"

@@ -48,7 +48,7 @@ class _MainScreenState extends State<MainScreen> {
                               navigateTo(_currentIndex);
                             },
                             child: _currentIndex == 0
-                                ? bottomIcon(Colors.green, "bag.svg",
+                                ? bottomIcon(Color(0xFFEE4540), "bag.svg",
                                     getTranslated(context, orders)!)
                                 : bottomIcon(Colors.white, "bag.svg",
                                     getTranslated(context, orders)!)),
@@ -66,7 +66,7 @@ class _MainScreenState extends State<MainScreen> {
                               navigateTo(_currentIndex);
                             },
                             child: _currentIndex == 1
-                                ? bottomIcon(Colors.green, "chart.svg",
+                                ? bottomIcon(Color(0xFFEE4540), "chart.svg",
                                     getTranslated(context, insight)!)
                                 : bottomIcon(Colors.white, "chart.svg",
                                     getTranslated(context, insight)!)),
@@ -84,7 +84,7 @@ class _MainScreenState extends State<MainScreen> {
                               navigateTo(_currentIndex);
                             },
                             child: _currentIndex == 2
-                                ? bottomIcon(Colors.green, "leaf.svg",
+                                ? bottomIcon(Color(0xFFEE4540), "leaf.svg",
                                     getTranslated(context, product)!)
                                 : bottomIcon(Colors.white, "leaf.svg",
                                     getTranslated(context, product)!)),
@@ -102,7 +102,7 @@ class _MainScreenState extends State<MainScreen> {
                               navigateTo(_currentIndex);
                             },
                             child: _currentIndex == 3
-                                ? bottomIcon(Colors.green, "profile.svg",
+                                ? bottomIcon(Color(0xFFEE4540), "profile.svg",
                                     getTranslated(context, profile)!)
                                 : bottomIcon(Colors.white, "profile.svg",
                                     getTranslated(context, profile)!)),
