@@ -15,6 +15,7 @@ import 'package:homchf_chef_side/utilities/device_utils.dart';
 import 'package:homchf_chef_side/utilities/prefConstatnt.dart';
 import 'package:homchf_chef_side/utilities/preference.dart';
 import 'package:sizer/sizer.dart';
+import 'package:onesignal_flutter/onesignal_flutter.dart';
 
 Future<BaseModel<OrdersResponse>>? getOrderFuture;
 List<Data> orderList = [];
@@ -36,6 +37,8 @@ class _HomeScreenState extends State<HomeScreen>
   List<Data> reverseorderListPast = [];
   List<Data> reverseorderList = [];
 
+  bool isTokenDone = false;
+
   @override
   void initState() {
     controllerTab = TabController(initialIndex: 0, length: 2, vsync: this);
@@ -52,6 +55,42 @@ class _HomeScreenState extends State<HomeScreen>
   Future<void> _refreshProducts() async {
     setState(() {
       getOrderFuture = getOrders();
+    });
+  }
+
+  Future<void> getOneSingleToken(appId) async {
+    //one signal mate
+    OneSignal.shared.consentGranted(true);
+    OneSignal.shared.setAppId(appId);
+    OneSignal.shared.setLogLevel(OSLogLevel.verbose, OSLogLevel.none);
+    await OneSignal.shared
+        .promptUserForPushNotificationPermission(fallbackToSettings: true);
+    OneSignal.shared.promptLocationPermission();
+    await OneSignal.shared.getDeviceState().then((value) =>
+        SharedPreferenceHelper.setString(
+            Preferences.device_token, value!.userId!));
+    // print("pushtoken1:${SharedPreferenceUtil.getString(Constants.appPushOneSingleToken)}");
+    //
+    //   if (value != null && value.userId != null) {
+    //     SharedPreferenceHelper.setString(
+    //         Preferences.device_token, value.userId!);
+    //   } else {
+    //     SharedPreferenceHelper.setString(Preferences.device_token, '');
+    //   }
+
+    setState(() {
+      isTokenDone = true;
+      print(
+          'token ======  ${SharedPreferenceHelper.getString(Preferences.device_token)}');
+    });
+    if (SharedPreferenceHelper.getString(Preferences.device_token) == 'N/A') {
+      getOneSingleToken(
+          SharedPreferenceHelper.getString(Preferences.vendor_app_id));
+    }
+    OneSignal.shared.setNotificationWillShowInForegroundHandler(
+        (OSNotificationReceivedEvent event) {
+      // Display Notification, send null to not display, send notification to display
+      event.complete(event.notification);
     });
   }
 

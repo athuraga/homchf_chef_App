@@ -6,9 +6,11 @@ import 'package:homchf_chef_side/routes/route_names.dart';
 import 'package:homchf_chef_side/utilities/prefConstatnt.dart';
 import 'package:homchf_chef_side/utilities/preference.dart';
 import 'package:sizer/sizer.dart';
+import 'package:onesignal_flutter/onesignal_flutter.dart';
 
 import 'localization/lang_localizations.dart';
 import 'localization/localization_constant.dart';
+import 'constantsonesignal.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -45,6 +47,21 @@ class _MyAppState extends State<MyApp> {
           })
         });
     super.didChangeDependencies();
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    configOneSignel();
+  }
+
+  void configOneSignel() async {
+    OneSignal.shared.setLogLevel(OSLogLevel.verbose, OSLogLevel.none);
+    await OneSignal.shared.setAppId(
+        oneSignalAppId); //this ‘oneSignalAppId’ is imported from constantsonesignal.dart file
+    OneSignal.shared.promptUserForPushNotificationPermission().then((accepted) {
+      print("Accepted permission: $accepted");
+    });
   }
 
   @override

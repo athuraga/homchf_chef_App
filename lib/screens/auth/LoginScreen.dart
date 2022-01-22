@@ -535,14 +535,18 @@ class _LoginScreenState extends State<LoginScreen> {
     await OneSignal.shared
         .promptUserForPushNotificationPermission(fallbackToSettings: true);
     OneSignal.shared.promptLocationPermission();
-    await OneSignal.shared.getDeviceState().then((value) {
-      if (value != null && value.userId != null) {
+    await OneSignal.shared.getDeviceState().then((value) =>
         SharedPreferenceHelper.setString(
-            Preferences.device_token, value.userId!);
-      } else {
-        SharedPreferenceHelper.setString(Preferences.device_token, '');
-      }
-    });
+            Preferences.device_token, value!.userId!));
+    // print("pushtoken1:${SharedPreferenceUtil.getString(Constants.appPushOneSingleToken)}");
+    //
+    //   if (value != null && value.userId != null) {
+    //     SharedPreferenceHelper.setString(
+    //         Preferences.device_token, value.userId!);
+    //   } else {
+    //     SharedPreferenceHelper.setString(Preferences.device_token, '');
+    //   }
+
     setState(() {
       isTokenDone = true;
       print(

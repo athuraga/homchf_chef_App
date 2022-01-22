@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "126977043874",
+    "project_id": "homchfvendor",
+    "storage_bucket": "homchfvendor.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:126977043874:android:8fd689bf2ad1e6d94216fb",
+        "android_client_info": {
+          "package_name": "app.one.homchf.vendor"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "126977043874-tc2u3pm3b973nfna1g6jj03lnouv0v9u.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "app.one.homchf.vendor",
+            "certificate_hash": "e4501ce1ee96398a1c0222787a8c85f136c0b57e"
+          }
+        },
+        {
+          "client_id": "126977043874-ajhj4g2tphtjgdvsmdqrlhohc2lu30do.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC7aX2zKFMDqlU21vpvBdNyNqobjhuY3x8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "126977043874-ajhj4g2tphtjgdvsmdqrlhohc2lu30do.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
