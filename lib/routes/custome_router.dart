@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:homchf_chef_side/models/forgot_password.dart';
 import 'package:homchf_chef_side/routes/route_names.dart';
 import 'package:homchf_chef_side/screens/MainScreen.dart';
+import 'package:homchf_chef_side/screens/auth/ForgotPasswordScreen.dart';
 import 'package:homchf_chef_side/screens/auth/LoginScreen.dart';
 import 'package:homchf_chef_side/screens/auth/RegisterScreen.dart';
 
@@ -9,6 +11,8 @@ class CustomRouter {
     switch (routeSettings.name) {
       case loginRoute:
         return MaterialPageRoute(builder: (_) => LoginScreen());
+      case forgotPasswordS:
+        return MaterialPageRoute(builder: (_) => ForgotPasswordScreen());
       case registerRoute:
         return MaterialPageRoute(builder: (_) => RegisterScreen());
       case homeRoute:

@@ -96,10 +96,34 @@ Future<BaseModel<User>> checkOTP(Map<String, String> param) async {
   return BaseModel()..data = response;
 }
 
+Future<BaseModel<User>> forgotPassword(Map<String, String> param) async {
+  User response;
+  try {
+    response = await ApiClient(ApiHeader().dioData()).checkOTP(param);
+    DeviceUtils.toastMessage(response.msg.toString());
+  } catch (error, stacktrace) {
+    print("Exception occur: $error stackTrace: $stacktrace");
+    return BaseModel()..setException(ServerError.withError(error: error));
+  }
+  return BaseModel()..data = response;
+}
+
 Future<BaseModel<User>> resendOTP(Map<String, String> param) async {
   User response;
   try {
     response = await ApiClient(ApiHeader().dioData()).resendOTP(param);
+    DeviceUtils.toastMessage(response.msg.toString());
+  } catch (error, stacktrace) {
+    print("Exception occur: $error stackTrace: $stacktrace");
+    return BaseModel()..setException(ServerError.withError(error: error));
+  }
+  return BaseModel()..data = response;
+}
+
+Future<BaseModel<User>> sendOTP(Map<String, String> param) async {
+  User response;
+  try {
+    response = await ApiClient(ApiHeader().dioData()).sendOTP(param);
     DeviceUtils.toastMessage(response.msg.toString());
   } catch (error, stacktrace) {
     print("Exception occur: $error stackTrace: $stacktrace");

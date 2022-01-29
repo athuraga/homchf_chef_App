@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'dart:collection';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -6,12 +7,14 @@ import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:homchf_chef_side/config/Palette.dart';
 import 'package:homchf_chef_side/constant/app_strings.dart';
 import 'package:homchf_chef_side/localization/localization_constant.dart';
+import 'package:homchf_chef_side/models/common_response.dart';
 import 'package:homchf_chef_side/models/user.dart';
 import 'package:homchf_chef_side/models/vendor_setting_response.dart';
 import 'package:homchf_chef_side/retrofit/api_client.dart';
 import 'package:homchf_chef_side/retrofit/api_header.dart';
 import 'package:homchf_chef_side/retrofit/base_model.dart';
 import 'package:homchf_chef_side/retrofit/server_error.dart';
+import 'package:homchf_chef_side/screens/auth/ForgotPasswordScreen.dart';
 import 'package:homchf_chef_side/screens/auth/OtpScreen.dart';
 import 'package:homchf_chef_side/screens/auth/RegisterScreen.dart';
 import 'package:homchf_chef_side/utilities/device_utils.dart';
@@ -34,9 +37,12 @@ class _LoginScreenState extends State<LoginScreen> {
   String? emailError = '';
   String? passError = '';
   bool _showProgress = false;
+  bool isProgress = false;
 
   bool isTokenDone = false;
   bool _obscureText = true;
+
+  get response => saveValueInPref(response);
 
   @override
   void initState() {
@@ -428,7 +434,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         ),
                       ),
                       SizedBox(
-                        height: 10,
+                        height: 30,
                       ),
                       Center(
                         child: GestureDetector(
@@ -444,8 +450,8 @@ class _LoginScreenState extends State<LoginScreen> {
                                     children: [
                                   TextSpan(
                                       style: TextStyle(
-                                        color: Colors.black,
-                                        fontSize: 14,
+                                        color: Colors.green.shade600,
+                                        fontSize: 26,
                                         fontFamily: proxima_nova_bold,
                                       ),
                                       text: getTranslated(context, register))
@@ -454,6 +460,35 @@ class _LoginScreenState extends State<LoginScreen> {
                                   context,
                                   MaterialPageRoute(
                                       builder: (context) => RegisterScreen()),
+                                )),
+                      ),
+                      SizedBox(
+                        height: 30,
+                      ),
+                      Center(
+                        child: GestureDetector(
+                            child: RichText(
+                                text: TextSpan(
+                                    style: TextStyle(
+                                      color: Colors.black,
+                                      fontSize: 1,
+                                      fontFamily: proxima_nova_reg,
+                                    ),
+                                    text: '',
+                                    children: [
+                                  TextSpan(
+                                      style: TextStyle(
+                                        color: Colors.blueAccent[800],
+                                        fontSize: 18,
+                                        fontFamily: proxima_nova_bold,
+                                      ),
+                                      text: 'Forgot Password?')
+                                ])),
+                            onTap: () => Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) =>
+                                          ForgotPasswordScreen()),
                                 )),
                       ),
                     ],
@@ -558,7 +593,7 @@ class _LoginScreenState extends State<LoginScreen> {
     }
   }
 
-  void saveValueInPref(User response) {
+  saveValueInPref(User response) {
     SharedPreferenceHelper.setBoolean(Preferences.is_logged_in, true);
     if (response.data!.id != null) {
       SharedPreferenceHelper.setString(
@@ -676,5 +711,6 @@ class _LoginScreenState extends State<LoginScreen> {
     } else {
       SharedPreferenceHelper.setString(Preferences.token, '');
     }
+    return response;
   }
 }

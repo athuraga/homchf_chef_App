@@ -4,6 +4,9 @@ class Apis {
   static const String login = 'login';
   static const String register = 'register';
   static const String checkOTP = 'check_otp';
+  static const String forgotPassowrd = 'forgot_passowrd';
+  static const String sendOTP = 'send_otp';
+
   static const String resendOTP = 'resend_otp';
   static const String menu = 'menu';
   static const String createMenu = 'create_menu';

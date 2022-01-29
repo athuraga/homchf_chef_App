@@ -151,4 +151,8 @@ class DeviceUtils {
       },
     );
   }
+
+  static void onLoading(BuildContext context) {}
+
+  static void hideDialog(BuildContext context) {}
 }

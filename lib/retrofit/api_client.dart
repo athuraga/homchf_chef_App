@@ -8,6 +8,7 @@ import 'package:homchf_chef_side/models/my_cash_balance_response.dart';
 import 'package:homchf_chef_side/models/orders_response.dart';
 import 'package:homchf_chef_side/models/product_customization_response.dart';
 import 'package:homchf_chef_side/models/product_response.dart';
+// import 'package:homchf_chef_side/models/send_otp_model.dart';
 import 'package:homchf_chef_side/models/user.dart';
 import 'package:homchf_chef_side/models/user_address_list_model.dart';
 
@@ -96,7 +97,15 @@ abstract class ApiClient {
   @FormUrlEncoded()
   Future<User> checkOTP(@Body() Map<String, String> param);
 
+  @POST(Apis.forgotPassowrd)
+  @FormUrlEncoded()
+  Future<User> forgotPassword(@Body() Map<String, String> param);
+
   @POST(Apis.resendOTP)
   @FormUrlEncoded()
   Future<User> resendOTP(@Body() Map<String, String> param);
+
+  @POST(Apis.sendOTP)
+  @FormUrlEncoded()
+  Future<User> sendOTP(@Body() Map<String, String?> map);
 }

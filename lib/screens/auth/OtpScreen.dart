@@ -9,6 +9,10 @@ import 'package:homchf_chef_side/constant/app_strings.dart';
 import 'package:homchf_chef_side/localization/localization_constant.dart';
 import 'package:homchf_chef_side/models/common_response.dart';
 import 'package:homchf_chef_side/models/user.dart';
+import 'package:homchf_chef_side/retrofit/api_client.dart';
+import 'package:homchf_chef_side/retrofit/api_header.dart';
+import 'package:homchf_chef_side/retrofit/base_model.dart';
+import 'package:homchf_chef_side/retrofit/server_error.dart';
 import 'package:homchf_chef_side/utilities/device_utils.dart';
 import 'package:homchf_chef_side/utilities/prefConstatnt.dart';
 import 'package:homchf_chef_side/utilities/preference.dart';
@@ -264,43 +268,44 @@ class _OtpScreenState extends State<OtpScreen> {
                         SizedBox(
                           height: MediaQuery.of(context).size.height * 0.02,
                         ),
-                        GestureDetector(
-                          onTap: () async {
-                            Map<String, String> param = new HashMap();
-                            param['user_id'] = response!.data!.id.toString();
-                            setState(() {
-                              isProgress = true;
-                            });
-                            await resendOTP(param).then((value) {});
-                            setState(() {});
-                          },
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              Text(
-                                "Don't receive code ?",
-                                style: TextStyle(
-                                    fontFamily: proxima_nova_reg,
-                                    fontSize: 14,
-                                    color: Palette.loginhead),
-                              ),
-                              Text(
-                                "Resend Again",
-                                style: TextStyle(
-                                    fontFamily: proxima_nova_bold,
-                                    fontSize: 14,
-                                    color: Palette.loginhead),
-                              )
-                            ],
-                          ),
-                        ),
+                        // GestureDetector(
+                        //   onTap: () async {
+                        //     // Map<String, String> param = new HashMap();
+                        //     // param['user_id'] = response!.data!.id.toString();
+                        //     // setState(() {
+                        //     //   isProgress = true;
+                        //     // });
+                        //     // await resendOTP(param).then((value) {});
+                        //     setState(() {});
+                        //     callReSendOTP(response?.data!.deviceToken!);
+                        //   },
+                        //   child: Row(
+                        //     mainAxisAlignment: MainAxisAlignment.center,
+                        //     children: [
+                        //       Text(
+                        //         "Don't receive code ?",
+                        //         style: TextStyle(
+                        //             fontFamily: proxima_nova_reg,
+                        //             fontSize: 14,
+                        //             color: Palette.loginhead),
+                        //       ),
+                        //       Text(
+                        //         "Resend Again",
+                        //         style: TextStyle(
+                        //             fontFamily: proxima_nova_bold,
+                        //             fontSize: 14,
+                        //             color: Palette.loginhead),
+                        //       )
+                        //     ],
+                        //   ),
+                        // ),
                         SizedBox(
                           height: MediaQuery.of(context).size.height * 0.04,
                         ),
                         Padding(
                           padding: const EdgeInsets.fromLTRB(20, 0, 20, 0),
                           child: Text(
-                            "We will share a one OTP code, Don't share this code with any other people,Please check your device.",
+                            "If you didnät receive your OTP, try toggling WiFi, go back and sned again",
                             textAlign: TextAlign.center,
                             style: TextStyle(
                                 color: Palette.switchs,
@@ -315,6 +320,33 @@ class _OtpScreenState extends State<OtpScreen> {
               ),
       ),
     );
+  }
+
+  Future<BaseModel<User>> callReSendOTP(deviceToken) async {
+    User response;
+    try {
+      DeviceUtils.onLoading(context);
+      Map<String, String> body = {'device_token': deviceToken};
+
+      response = (await ApiClient(ApiHeader().dioData()).resendOTP(body));
+      DeviceUtils.hideDialog(context);
+      print(response.success);
+      if (response.success!) {
+        DeviceUtils.toastMessage('OTP Sent');
+        Navigator.push(context,
+            MaterialPageRoute(builder: (context) => OtpScreen(response)));
+        saveValueInPref(response);
+      } else {
+        DeviceUtils.toastMessage('Error while sending OTP.');
+      }
+    } catch (error, stacktrace) {
+      setState(() {
+        DeviceUtils.hideDialog(context);
+      });
+      print("Exception occurred: $error stackTrace: $stacktrace");
+      return BaseModel()..setException(ServerError.withError(error: error));
+    }
+    return BaseModel()..data = response;
   }
 
   void saveValueInPref(User response) {

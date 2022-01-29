@@ -53,6 +53,7 @@ class _MyAppState extends State<MyApp> {
   void initState() {
     super.initState();
     configOneSignel();
+    onesignelpermission();
   }
 
   void configOneSignel() async {
@@ -62,6 +63,10 @@ class _MyAppState extends State<MyApp> {
     OneSignal.shared.promptUserForPushNotificationPermission().then((accepted) {
       print("Accepted permission: $accepted");
     });
+  }
+
+  onesignelpermission() async {
+    await OneSignal.shared.setRequiresUserPrivacyConsent(true);
   }
 
   @override
